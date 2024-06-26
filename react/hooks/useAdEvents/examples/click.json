@@ -1,0 +1,199 @@
+{
+  "currency": "BRL",
+  "eventName": "vtex:productClick",
+  "event": "productClick",
+  "product": {
+    "cacheId": "sp-2",
+    "productId": "2",
+    "description": "",
+    "productName": "Café Benove Smart",
+    "productReference": "b9organi230187",
+    "linkText": "cafe-benove-organico",
+    "brand": "Benove",
+    "brandId": 2000002,
+    "link": "/cafe-benove-organico/p",
+    "categories": ["/Bebidas/Café/", "/Bebidas/"],
+    "categoryId": "4",
+    "releaseDate": "1718668800000",
+    "priceRange": {
+      "sellingPrice": {
+        "highPrice": 39.25,
+        "lowPrice": 39.25,
+        "__typename": "PriceRange"
+      },
+      "listPrice": {
+        "highPrice": 45.8,
+        "lowPrice": 45.8,
+        "__typename": "PriceRange"
+      },
+      "__typename": "ProductPriceRange"
+    },
+    "specificationGroups": [
+      {
+        "name": "allSpecifications",
+        "originalName": "allSpecifications",
+        "specifications": [
+          {
+            "name": "sellerId",
+            "originalName": "sellerId",
+            "values": ["1"],
+            "__typename": "SpecificationGroupProperty"
+          }
+        ],
+        "__typename": "SpecificationGroup"
+      }
+    ],
+    "skuSpecifications": [],
+    "productClusters": [],
+    "clusterHighlights": [],
+    "properties": [
+      {
+        "name": "sellerId",
+        "values": ["1"],
+        "__typename": "Property"
+      }
+    ],
+    "__typename": "Product",
+    "advertisement": null,
+    "items": [
+      {
+        "itemId": "3",
+        "name": "Café Benove Orgânico 250g",
+        "nameComplete": "Café Benove Smart Café Benove Orgânico 250g",
+        "complementName": "",
+        "ean": "EAN2301988",
+        "variations": [],
+        "referenceId": [
+          {
+            "Key": "RefId",
+            "Value": "2301987",
+            "__typename": "Reference"
+          }
+        ],
+        "measurementUnit": "un",
+        "unitMultiplier": 1,
+        "images": [
+          {
+            "cacheId": "155395",
+            "imageId": "155395",
+            "imageLabel": "",
+            "imageTag": "",
+            "imageUrl": "https://newtailpartnerbr.vtexassets.com/arquivos/ids/155395/Woman-drinking-coffee---640x427.jpg?v=638543115439970000",
+            "imageText": "",
+            "__typename": "Image"
+          }
+        ],
+        "__typename": "SKU",
+        "sellers": [
+          {
+            "sellerId": "1",
+            "sellerName": "Newtail - BR",
+            "sellerDefault": true,
+            "__typename": "Seller",
+            "commertialOffer": {
+              "discountHighlights": [],
+              "teasers": [],
+              "Price": 39.25,
+              "ListPrice": 45.8,
+              "Tax": 0,
+              "taxPercentage": 0,
+              "spotPrice": 39.25,
+              "PriceWithoutDiscount": 45.8,
+              "RewardValue": 0,
+              "PriceValidUntil": "",
+              "AvailableQuantity": 10000,
+              "__typename": "Offer",
+              "Installments": []
+            }
+          }
+        ]
+      }
+    ],
+    "selectedProperties": null,
+    "rule": null,
+    "sku": {
+      "itemId": "3",
+      "name": "Café Benove Orgânico 250g",
+      "nameComplete": "Café Benove Smart Café Benove Orgânico 250g",
+      "complementName": "",
+      "ean": "EAN2301988",
+      "variations": [],
+      "referenceId": {
+        "Key": "RefId",
+        "Value": "2301987",
+        "__typename": "Reference"
+      },
+      "measurementUnit": "un",
+      "unitMultiplier": 1,
+      "images": [
+        {
+          "cacheId": "155395",
+          "imageId": "155395",
+          "imageLabel": "",
+          "imageTag": "",
+          "imageUrl": "https://newtailpartnerbr.vtexassets.com/arquivos/ids/155395-500-auto?v=638543115439970000&width=500&height=auto&aspect=true",
+          "imageText": "",
+          "__typename": "Image"
+        }
+      ],
+      "__typename": "SKU",
+      "sellers": [
+        {
+          "sellerId": "1",
+          "sellerName": "Newtail - BR",
+          "sellerDefault": true,
+          "__typename": "Seller",
+          "commertialOffer": {
+            "discountHighlights": [],
+            "teasers": [],
+            "Price": 39.25,
+            "ListPrice": 45.8,
+            "Tax": 0,
+            "taxPercentage": 0,
+            "spotPrice": 39.25,
+            "PriceWithoutDiscount": 45.8,
+            "RewardValue": 0,
+            "PriceValidUntil": "",
+            "AvailableQuantity": 10000,
+            "__typename": "Offer",
+            "Installments": []
+          }
+        }
+      ],
+      "seller": {
+        "sellerId": "1",
+        "sellerName": "Newtail - BR",
+        "sellerDefault": true,
+        "__typename": "Seller",
+        "commertialOffer": {
+          "discountHighlights": [],
+          "teasers": [],
+          "Price": 39.25,
+          "ListPrice": 45.8,
+          "Tax": 0,
+          "taxPercentage": 0,
+          "spotPrice": 39.25,
+          "PriceWithoutDiscount": 45.8,
+          "RewardValue": 0,
+          "PriceValidUntil": "",
+          "AvailableQuantity": 10000,
+          "__typename": "Offer",
+          "Installments": []
+        }
+      },
+      "image": {
+        "cacheId": "155395",
+        "imageId": "155395",
+        "imageLabel": "",
+        "imageTag": "",
+        "imageUrl": "https://newtailpartnerbr.vtexassets.com/arquivos/ids/155395-500-auto?v=638543115439970000&width=500&height=auto&aspect=true",
+        "imageText": "",
+        "__typename": "Image"
+      }
+    }
+  },
+  "query": "smart",
+  "map": "ft",
+  "position": 2,
+  "list": "smart"
+}

@@ -1,0 +1,639 @@
+{
+  "currency": "BRL",
+  "eventName": "vtex:productImpression",
+  "event": "productImpression",
+  "list": "smart",
+  "impressions": [
+    {
+      "product": {
+        "cacheId": "sp-1",
+        "productId": "1",
+        "description": "Características Gerais\r\n\r\nVeja os detalhes em cenas claras ou escuras\r\nHDR para brilho e contraste: Brilho e contraste para você aproveitar seu programa tanto nas cenas mais escuras quanto nas de alta luminosidade.\r\n\r\nQualidade de imagem em alta definição\r\nResolução HD: Entre na era digital com os detalhes e cores mais vivas da qualidade HD.\r\n\r\nConexão HDMI e USB\r\nEquipada com os principais tipos de conexões para facilitar a ligação com os mais variados tipos de equipamentos.",
+        "productName": "Smart TV LED 32\" HD Samsung T4300 com HDR, Sistema Operacional Tizen, Wi-Fi, Espelhamento de Tela, Dolby Digital Plus, HDMI e USB",
+        "productReference": "55006486",
+        "linkText": "smart-32-samsung",
+        "brand": "Samsung",
+        "brandId": 2000001,
+        "link": "/smart-32-samsung/p",
+        "categories": ["/eletronico/"],
+        "categoryId": "2",
+        "releaseDate": "1718323200000",
+        "priceRange": {
+          "sellingPrice": {
+            "highPrice": 1200,
+            "lowPrice": 1125,
+            "__typename": "PriceRange"
+          },
+          "listPrice": {
+            "highPrice": 1200,
+            "lowPrice": 1125,
+            "__typename": "PriceRange"
+          },
+          "__typename": "ProductPriceRange"
+        },
+        "specificationGroups": [
+          {
+            "name": "allSpecifications",
+            "originalName": "allSpecifications",
+            "specifications": [
+              {
+                "name": "sellerId",
+                "originalName": "sellerId",
+                "values": ["1"],
+                "__typename": "SpecificationGroupProperty"
+              }
+            ],
+            "__typename": "SpecificationGroup"
+          }
+        ],
+        "skuSpecifications": [],
+        "productClusters": [],
+        "clusterHighlights": [],
+        "properties": [
+          {
+            "name": "sellerId",
+            "values": ["1"],
+            "__typename": "Property"
+          }
+        ],
+        "__typename": "Product",
+        "advertisement": null,
+        "items": [
+          {
+            "itemId": "1",
+            "name": "Smart TV LED 32\" HD Samsung T4300 com HDR, Sistema Operacional Tizen, Wi-Fi, Espelhamento de Tela, Dolby Digital Plus, HDMI e USB",
+            "nameComplete": "Smart TV LED 32\" HD Samsung T4300 com HDR, Sistema Operacional Tizen, Wi-Fi, Espelhamento de Tela, Dolby Digital Plus, HDMI e USB",
+            "complementName": "",
+            "ean": "978020137962",
+            "variations": [],
+            "referenceId": [
+              {
+                "Key": "RefId",
+                "Value": null,
+                "__typename": "Reference"
+              }
+            ],
+            "measurementUnit": "un",
+            "unitMultiplier": 1,
+            "images": [
+              {
+                "cacheId": "155394",
+                "imageId": "155394",
+                "imageLabel": "",
+                "imageTag": "",
+                "imageUrl": "https://newtailpartnerbr.vtexassets.com/arquivos/ids/155394/samsung.png?v=638539771156770000",
+                "imageText": "",
+                "__typename": "Image"
+              }
+            ],
+            "__typename": "SKU",
+            "sellers": [
+              {
+                "sellerId": "1",
+                "sellerName": "Newtail - BR",
+                "sellerDefault": true,
+                "__typename": "Seller",
+                "commertialOffer": {
+                  "discountHighlights": [],
+                  "teasers": [],
+                  "Price": 1200,
+                  "ListPrice": 1200,
+                  "Tax": 0,
+                  "taxPercentage": 0,
+                  "spotPrice": 1200,
+                  "PriceWithoutDiscount": 1200,
+                  "RewardValue": 0,
+                  "PriceValidUntil": "",
+                  "AvailableQuantity": 10000,
+                  "__typename": "Offer",
+                  "Installments": []
+                }
+              }
+            ]
+          },
+          {
+            "itemId": "2",
+            "name": "Smart TV LED 32\" HD Samsung  Azul",
+            "nameComplete": "Smart TV LED 32\" HD Samsung T4300 com HDR, Sistema Operacional Tizen, Wi-Fi, Espelhamento de Tela, Dolby Digital Plus, HDMI e USB Smart TV LED 32\" HD Samsung  Azul",
+            "complementName": "",
+            "ean": "978020137963",
+            "variations": [],
+            "referenceId": [
+              {
+                "Key": "RefId",
+                "Value": "4510",
+                "__typename": "Reference"
+              }
+            ],
+            "measurementUnit": "un",
+            "unitMultiplier": 1,
+            "images": [
+              {
+                "cacheId": "155394",
+                "imageId": "155394",
+                "imageLabel": "",
+                "imageTag": "",
+                "imageUrl": "https://newtailpartnerbr.vtexassets.com/arquivos/ids/155394/samsung.png?v=638539771156770000",
+                "imageText": "",
+                "__typename": "Image"
+              }
+            ],
+            "__typename": "SKU",
+            "sellers": [
+              {
+                "sellerId": "1",
+                "sellerName": "Newtail - BR",
+                "sellerDefault": true,
+                "__typename": "Seller",
+                "commertialOffer": {
+                  "discountHighlights": [],
+                  "teasers": [],
+                  "Price": 1125,
+                  "ListPrice": 1125,
+                  "Tax": 0,
+                  "taxPercentage": 0,
+                  "spotPrice": 1125,
+                  "PriceWithoutDiscount": 1125,
+                  "RewardValue": 0,
+                  "PriceValidUntil": "",
+                  "AvailableQuantity": 10000,
+                  "__typename": "Offer",
+                  "Installments": []
+                }
+              }
+            ]
+          }
+        ],
+        "selectedProperties": null,
+        "rule": null,
+        "sku": {
+          "itemId": "1",
+          "name": "Smart TV LED 32\" HD Samsung T4300 com HDR, Sistema Operacional Tizen, Wi-Fi, Espelhamento de Tela, Dolby Digital Plus, HDMI e USB",
+          "nameComplete": "Smart TV LED 32\" HD Samsung T4300 com HDR, Sistema Operacional Tizen, Wi-Fi, Espelhamento de Tela, Dolby Digital Plus, HDMI e USB",
+          "complementName": "",
+          "ean": "978020137962",
+          "variations": [],
+          "referenceId": {
+            "Key": "RefId",
+            "Value": null,
+            "__typename": "Reference"
+          },
+          "measurementUnit": "un",
+          "unitMultiplier": 1,
+          "images": [
+            {
+              "cacheId": "155394",
+              "imageId": "155394",
+              "imageLabel": "",
+              "imageTag": "",
+              "imageUrl": "https://newtailpartnerbr.vtexassets.com/arquivos/ids/155394/samsung.png?v=638539771156770000",
+              "imageText": "",
+              "__typename": "Image"
+            }
+          ],
+          "__typename": "SKU",
+          "sellers": [
+            {
+              "sellerId": "1",
+              "sellerName": "Newtail - BR",
+              "sellerDefault": true,
+              "__typename": "Seller",
+              "commertialOffer": {
+                "discountHighlights": [],
+                "teasers": [],
+                "Price": 1200,
+                "ListPrice": 1200,
+                "Tax": 0,
+                "taxPercentage": 0,
+                "spotPrice": 1200,
+                "PriceWithoutDiscount": 1200,
+                "RewardValue": 0,
+                "PriceValidUntil": "",
+                "AvailableQuantity": 10000,
+                "__typename": "Offer",
+                "Installments": []
+              }
+            }
+          ],
+          "seller": {
+            "sellerId": "1",
+            "sellerName": "Newtail - BR",
+            "sellerDefault": true,
+            "__typename": "Seller",
+            "commertialOffer": {
+              "discountHighlights": [],
+              "teasers": [],
+              "Price": 1200,
+              "ListPrice": 1200,
+              "Tax": 0,
+              "taxPercentage": 0,
+              "spotPrice": 1200,
+              "PriceWithoutDiscount": 1200,
+              "RewardValue": 0,
+              "PriceValidUntil": "",
+              "AvailableQuantity": 10000,
+              "__typename": "Offer",
+              "Installments": []
+            }
+          },
+          "image": {
+            "cacheId": "155394",
+            "imageId": "155394",
+            "imageLabel": "",
+            "imageTag": "",
+            "imageUrl": "https://newtailpartnerbr.vtexassets.com/arquivos/ids/155394-500-auto?width=500&height=auto&aspect=true",
+            "imageText": "",
+            "__typename": "Image"
+          }
+        }
+      },
+      "position": 1
+    },
+    {
+      "product": {
+        "cacheId": "sp-2",
+        "productId": "2",
+        "description": "",
+        "productName": "Café Benove Smart",
+        "productReference": "b9organi230187",
+        "linkText": "cafe-benove-organico",
+        "brand": "Benove",
+        "brandId": 2000002,
+        "link": "/cafe-benove-organico/p",
+        "categories": ["/Bebidas/Café/", "/Bebidas/"],
+        "categoryId": "4",
+        "releaseDate": "1718668800000",
+        "priceRange": {
+          "sellingPrice": {
+            "highPrice": 39.25,
+            "lowPrice": 39.25,
+            "__typename": "PriceRange"
+          },
+          "listPrice": {
+            "highPrice": 45.8,
+            "lowPrice": 45.8,
+            "__typename": "PriceRange"
+          },
+          "__typename": "ProductPriceRange"
+        },
+        "specificationGroups": [
+          {
+            "name": "allSpecifications",
+            "originalName": "allSpecifications",
+            "specifications": [
+              {
+                "name": "sellerId",
+                "originalName": "sellerId",
+                "values": ["1"],
+                "__typename": "SpecificationGroupProperty"
+              }
+            ],
+            "__typename": "SpecificationGroup"
+          }
+        ],
+        "skuSpecifications": [],
+        "productClusters": [],
+        "clusterHighlights": [],
+        "properties": [
+          {
+            "name": "sellerId",
+            "values": ["1"],
+            "__typename": "Property"
+          }
+        ],
+        "__typename": "Product",
+        "advertisement": null,
+        "items": [
+          {
+            "itemId": "3",
+            "name": "Café Benove Orgânico 250g",
+            "nameComplete": "Café Benove Smart Café Benove Orgânico 250g",
+            "complementName": "",
+            "ean": "EAN2301988",
+            "variations": [],
+            "referenceId": [
+              {
+                "Key": "RefId",
+                "Value": "2301987",
+                "__typename": "Reference"
+              }
+            ],
+            "measurementUnit": "un",
+            "unitMultiplier": 1,
+            "images": [
+              {
+                "cacheId": "155395",
+                "imageId": "155395",
+                "imageLabel": "",
+                "imageTag": "",
+                "imageUrl": "https://newtailpartnerbr.vtexassets.com/arquivos/ids/155395/Woman-drinking-coffee---640x427.jpg?v=638543115439970000",
+                "imageText": "",
+                "__typename": "Image"
+              }
+            ],
+            "__typename": "SKU",
+            "sellers": [
+              {
+                "sellerId": "1",
+                "sellerName": "Newtail - BR",
+                "sellerDefault": true,
+                "__typename": "Seller",
+                "commertialOffer": {
+                  "discountHighlights": [],
+                  "teasers": [],
+                  "Price": 39.25,
+                  "ListPrice": 45.8,
+                  "Tax": 0,
+                  "taxPercentage": 0,
+                  "spotPrice": 39.25,
+                  "PriceWithoutDiscount": 45.8,
+                  "RewardValue": 0,
+                  "PriceValidUntil": "",
+                  "AvailableQuantity": 10000,
+                  "__typename": "Offer",
+                  "Installments": []
+                }
+              }
+            ]
+          }
+        ],
+        "selectedProperties": null,
+        "rule": null,
+        "sku": {
+          "itemId": "3",
+          "name": "Café Benove Orgânico 250g",
+          "nameComplete": "Café Benove Smart Café Benove Orgânico 250g",
+          "complementName": "",
+          "ean": "EAN2301988",
+          "variations": [],
+          "referenceId": {
+            "Key": "RefId",
+            "Value": "2301987",
+            "__typename": "Reference"
+          },
+          "measurementUnit": "un",
+          "unitMultiplier": 1,
+          "images": [
+            {
+              "cacheId": "155395",
+              "imageId": "155395",
+              "imageLabel": "",
+              "imageTag": "",
+              "imageUrl": "https://newtailpartnerbr.vtexassets.com/arquivos/ids/155395/Woman-drinking-coffee---640x427.jpg?v=638543115439970000",
+              "imageText": "",
+              "__typename": "Image"
+            }
+          ],
+          "__typename": "SKU",
+          "sellers": [
+            {
+              "sellerId": "1",
+              "sellerName": "Newtail - BR",
+              "sellerDefault": true,
+              "__typename": "Seller",
+              "commertialOffer": {
+                "discountHighlights": [],
+                "teasers": [],
+                "Price": 39.25,
+                "ListPrice": 45.8,
+                "Tax": 0,
+                "taxPercentage": 0,
+                "spotPrice": 39.25,
+                "PriceWithoutDiscount": 45.8,
+                "RewardValue": 0,
+                "PriceValidUntil": "",
+                "AvailableQuantity": 10000,
+                "__typename": "Offer",
+                "Installments": []
+              }
+            }
+          ],
+          "seller": {
+            "sellerId": "1",
+            "sellerName": "Newtail - BR",
+            "sellerDefault": true,
+            "__typename": "Seller",
+            "commertialOffer": {
+              "discountHighlights": [],
+              "teasers": [],
+              "Price": 39.25,
+              "ListPrice": 45.8,
+              "Tax": 0,
+              "taxPercentage": 0,
+              "spotPrice": 39.25,
+              "PriceWithoutDiscount": 45.8,
+              "RewardValue": 0,
+              "PriceValidUntil": "",
+              "AvailableQuantity": 10000,
+              "__typename": "Offer",
+              "Installments": []
+            }
+          },
+          "image": {
+            "cacheId": "155395",
+            "imageId": "155395",
+            "imageLabel": "",
+            "imageTag": "",
+            "imageUrl": "https://newtailpartnerbr.vtexassets.com/arquivos/ids/155395-500-auto?width=500&height=auto&aspect=true",
+            "imageText": "",
+            "__typename": "Image"
+          }
+        }
+      },
+      "position": 2
+    },
+    {
+      "product": {
+        "cacheId": "sp-3",
+        "productId": "3",
+        "description": "",
+        "productName": "Xícara Benove Smart",
+        "productReference": "",
+        "linkText": "xicara-benove--smart",
+        "brand": "Benove",
+        "brandId": 2000002,
+        "link": "/xicara-benove--smart/p",
+        "categories": ["/Bebidas/Café/", "/Bebidas/"],
+        "categoryId": "4",
+        "releaseDate": "1718668800000",
+        "priceRange": {
+          "sellingPrice": {
+            "highPrice": 13,
+            "lowPrice": 13,
+            "__typename": "PriceRange"
+          },
+          "listPrice": {
+            "highPrice": 13,
+            "lowPrice": 13,
+            "__typename": "PriceRange"
+          },
+          "__typename": "ProductPriceRange"
+        },
+        "specificationGroups": [
+          {
+            "name": "allSpecifications",
+            "originalName": "allSpecifications",
+            "specifications": [
+              {
+                "name": "sellerId",
+                "originalName": "sellerId",
+                "values": ["1"],
+                "__typename": "SpecificationGroupProperty"
+              }
+            ],
+            "__typename": "SpecificationGroup"
+          }
+        ],
+        "skuSpecifications": [],
+        "productClusters": [],
+        "clusterHighlights": [],
+        "properties": [
+          {
+            "name": "sellerId",
+            "values": ["1"],
+            "__typename": "Property"
+          }
+        ],
+        "__typename": "Product",
+        "advertisement": null,
+        "items": [
+          {
+            "itemId": "4",
+            "name": "Café Benove Orgânico 250g Copy",
+            "nameComplete": "Xícara Benove Smart Café Benove Orgânico 250g Copy",
+            "complementName": "",
+            "ean": "978920137964",
+            "variations": [],
+            "referenceId": [
+              {
+                "Key": "RefId",
+                "Value": null,
+                "__typename": "Reference"
+              }
+            ],
+            "measurementUnit": "un",
+            "unitMultiplier": 1,
+            "images": [
+              {
+                "cacheId": "155395",
+                "imageId": "155395",
+                "imageLabel": "",
+                "imageTag": "",
+                "imageUrl": "https://newtailpartnerbr.vtexassets.com/arquivos/ids/155395/Woman-drinking-coffee---640x427.jpg?v=638543115439970000",
+                "imageText": "",
+                "__typename": "Image"
+              }
+            ],
+            "__typename": "SKU",
+            "sellers": [
+              {
+                "sellerId": "1",
+                "sellerName": "Newtail - BR",
+                "sellerDefault": true,
+                "__typename": "Seller",
+                "commertialOffer": {
+                  "discountHighlights": [],
+                  "teasers": [],
+                  "Price": 13,
+                  "ListPrice": 13,
+                  "Tax": 0,
+                  "taxPercentage": 0,
+                  "spotPrice": 13,
+                  "PriceWithoutDiscount": 13,
+                  "RewardValue": 0,
+                  "PriceValidUntil": "",
+                  "AvailableQuantity": 10000,
+                  "__typename": "Offer",
+                  "Installments": []
+                }
+              }
+            ]
+          }
+        ],
+        "selectedProperties": null,
+        "rule": null,
+        "sku": {
+          "itemId": "4",
+          "name": "Café Benove Orgânico 250g Copy",
+          "nameComplete": "Xícara Benove Smart Café Benove Orgânico 250g Copy",
+          "complementName": "",
+          "ean": "978920137964",
+          "variations": [],
+          "referenceId": {
+            "Key": "RefId",
+            "Value": null,
+            "__typename": "Reference"
+          },
+          "measurementUnit": "un",
+          "unitMultiplier": 1,
+          "images": [
+            {
+              "cacheId": "155395",
+              "imageId": "155395",
+              "imageLabel": "",
+              "imageTag": "",
+              "imageUrl": "https://newtailpartnerbr.vtexassets.com/arquivos/ids/155395/Woman-drinking-coffee---640x427.jpg?v=638543115439970000",
+              "imageText": "",
+              "__typename": "Image"
+            }
+          ],
+          "__typename": "SKU",
+          "sellers": [
+            {
+              "sellerId": "1",
+              "sellerName": "Newtail - BR",
+              "sellerDefault": true,
+              "__typename": "Seller",
+              "commertialOffer": {
+                "discountHighlights": [],
+                "teasers": [],
+                "Price": 13,
+                "ListPrice": 13,
+                "Tax": 0,
+                "taxPercentage": 0,
+                "spotPrice": 13,
+                "PriceWithoutDiscount": 13,
+                "RewardValue": 0,
+                "PriceValidUntil": "",
+                "AvailableQuantity": 10000,
+                "__typename": "Offer",
+                "Installments": []
+              }
+            }
+          ],
+          "seller": {
+            "sellerId": "1",
+            "sellerName": "Newtail - BR",
+            "sellerDefault": true,
+            "__typename": "Seller",
+            "commertialOffer": {
+              "discountHighlights": [],
+              "teasers": [],
+              "Price": 13,
+              "ListPrice": 13,
+              "Tax": 0,
+              "taxPercentage": 0,
+              "spotPrice": 13,
+              "PriceWithoutDiscount": 13,
+              "RewardValue": 0,
+              "PriceValidUntil": "",
+              "AvailableQuantity": 10000,
+              "__typename": "Offer",
+              "Installments": []
+            }
+          },
+          "image": {
+            "cacheId": "155395",
+            "imageId": "155395",
+            "imageLabel": "",
+            "imageTag": "",
+            "imageUrl": "https://newtailpartnerbr.vtexassets.com/arquivos/ids/155395-500-auto?width=500&height=auto&aspect=true",
+            "imageText": "",
+            "__typename": "Image"
+          }
+        }
+      },
+      "position": 3
+    }
+  ]
+}

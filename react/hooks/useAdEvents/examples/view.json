@@ -1,0 +1,85 @@
+{
+  "currency": "BRL",
+  "eventName": "vtex:productView",
+  "event": "productView",
+  "product": {
+    "detailUrl": "/cafe-benove-organico/p",
+    "brand": "Benove",
+    "brandId": 2000002,
+    "productReference": "b9organi230187",
+    "linkText": "cafe-benove-organico",
+    "categoryId": "4",
+    "categories": ["/Bebidas/Café/", "/Bebidas/"],
+    "categoryTree": [
+      {
+        "id": 3,
+        "name": "Bebidas",
+        "href": "/bebidas",
+        "__typename": "Category"
+      },
+      {
+        "id": 4,
+        "name": "Café",
+        "href": "/bebidas/cafe",
+        "__typename": "Category"
+      }
+    ],
+    "productId": "2",
+    "productName": "Café Benove Smart",
+    "items": [
+      {
+        "itemId": "3",
+        "name": "Café Benove Orgânico 250g",
+        "ean": "EAN2301988",
+        "referenceId": [
+          {
+            "Key": "RefId",
+            "Value": "2301987",
+            "__typename": "Reference"
+          }
+        ],
+        "imageUrl": "https://newtailpartnerbr.vtexassets.com/arquivos/ids/155395/Woman-drinking-coffee---640x427.jpg?v=638543115439970000",
+        "sellers": [
+          {
+            "sellerId": "1",
+            "sellerName": "Newtail - BR",
+            "sellerDefault": true,
+            "commertialOffer": {
+              "Price": 39.25,
+              "ListPrice": 45.8,
+              "AvailableQuantity": 9999,
+              "PriceWithoutDiscount": 39.25
+            }
+          }
+        ]
+      }
+    ],
+    "selectedSku": {
+      "itemId": "3",
+      "name": "Café Benove Orgânico 250g",
+      "ean": "EAN2301988",
+      "referenceId": [
+        {
+          "Key": "RefId",
+          "Value": "2301987",
+          "__typename": "Reference"
+        }
+      ],
+      "imageUrl": "https://newtailpartnerbr.vtexassets.com/arquivos/ids/155395/Woman-drinking-coffee---640x427.jpg?v=638543115439970000",
+      "sellers": [
+        {
+          "sellerId": "1",
+          "sellerName": "Newtail - BR",
+          "sellerDefault": true,
+          "commertialOffer": {
+            "Price": 39.25,
+            "ListPrice": 45.8,
+            "AvailableQuantity": 9999,
+            "PriceWithoutDiscount": 39.25
+          }
+        }
+      ]
+    }
+  },
+  "list": "smart"
+}
