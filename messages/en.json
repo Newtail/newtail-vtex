@@ -1,0 +1,29 @@
+{
+  "admin/newtailpartnerbr-newtail-media.common.placementNameAdmin.title": "Placement name",
+  "admin/newtailpartnerbr-newtail-media.common.quantityAdmin.title": "Quantity of ads",
+
+  "admin/newtailpartnerbr-newtail-media.shelf.title": "Newtail Media - Shelf",
+
+  "admin/newtailpartnerbr-newtail-media.banner.title": "Newtail Media - Banner",
+  "admin/newtailpartnerbr-newtail-media.banner.sizeAdmin.title": "Media Size",
+  "admin/newtailpartnerbr-newtail-media.banner.sizeAdmin.description": "Use the same size registered on the ad platform.",
+
+  "admin/newtailpartnerbr-newtail-media.search.title": "Newtail Media - Search",
+
+  "admin/newtailpartnerbr-newtail-media.search.tagPosition.title": "Tag position",
+  "admin/newtailpartnerbr-newtail-media.search.tagPosition.description": "Choose where the tag will be displayed in the product card.",
+  "admin/newtailpartnerbr-newtail-media.search.tagPosition.start": "Start",
+  "admin/newtailpartnerbr-newtail-media.search.tagPosition.end": "End",
+
+  "admin/newtailpartnerbr-newtail-media.search.tagText.default": "Sponsored",
+  "admin/newtailpartnerbr-newtail-media.search.tagText.title": "Sponsored tag text",
+  "admin/newtailpartnerbr-newtail-media.search.tagText.description": "By default, 'sponsored' will be used with automatic translation. To override, fill in this field.",
+
+  "admin/newtailpartnerbr-newtail-media.search.tagClassname.title": "Tag Class",
+  "admin/newtailpartnerbr-newtail-media.search.tagClassname.description": "By default, '.newtail-sponsored-tag' will be used.",
+
+  "admin/newtailpartnerbr-newtail-media.search.parentSearchSelector.title": "[Advanced] HTML Element for Tag Insertion",
+  "admin/newtailpartnerbr-newtail-media.search.parentSearchSelector.description": "This field should be edited by developers only. By default, '.vtex-search-result-3-x-searchResultContainer #gallery-layout-container' will be used.",
+
+  "admin/newtailpartnerbr-newtail-media.search.onlyFirstSKU.title": "Use only first SKU. If checked, only the first SKU of the product will be used to search for the product in Newtail. If unchecked, all SKUs of the product will be used to search for the product in Newtail."
+}

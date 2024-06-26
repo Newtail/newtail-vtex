@@ -1,0 +1,90 @@
+{
+  "definitions": {
+    "NewtailMediaSearch": {
+      "type": "object",
+      "properties": {
+        "quantityAdmin": {
+          "default": 20,
+          "title": "admin/newtailpartnerbr-newtail-media.common.quantityAdmin.title",
+          "type": "string"
+        },
+        "placementNameAdmin": {
+          "title": "admin/newtailpartnerbr-newtail-media.common.placementNameAdmin.title",
+          "type": "string"
+        },
+        "tagTextAdmin": {
+          "default": "Patrocinado",
+          "title": "admin/newtailpartnerbr-newtail-media.search.tagText.title",
+          "description": "admin/newtailpartnerbr-newtail-media.search.tagText.description",
+          "type": "string"
+        },
+        "tagClassnameAdmin": {
+          "default": "newtail-sponsored-tag",
+          "title": "admin/newtailpartnerbr-newtail-media.search.tagClassname.title",
+          "description": "admin/newtailpartnerbr-newtail-media.search.tagClassname.description",
+          "type": "string"
+        },
+        "tagPositionAdmin": {
+          "title": "admin/newtailpartnerbr-newtail-media.search.tagPosition.title",
+          "description": "admin/newtailpartnerbr-newtail-media.search.tagPosition.description",
+          "enum": ["start", "end"],
+          "enumNames": [
+            "admin/newtailpartnerbr-newtail-media.search.tagPosition.start",
+            "admin/newtailpartnerbr-newtail-media.search.tagPosition.end"
+          ],
+          "type": "string",
+          "widget": {
+            "ui:widget": "radio"
+          },
+          "parentSearchSelectorAdmin": {
+            "default": ".vtex-search-result-3-x-searchResultContainer #gallery-layout-container",
+            "title": "admin/newtailpartnerbr-newtail-media.search.parentSearchSelector.title",
+            "description": "admin/newtailpartnerbr-newtail-media.search.parentSearchSelector.description",
+            "type": "string"
+          },
+          "onlyFirstSKUAdmin": {
+            "default": false,
+            "title": "admin/newtailpartnerbr-newtail-media.search.onlyFirstSKU.title",
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "NewtailMediaBanner": {
+      "type": "object",
+      "properties": {
+        "placementNameAdmin": {
+          "default": "banner",
+          "title": "admin/newtailpartnerbr-newtail-media.common.placementNameAdmin.title",
+          "type": "string"
+        },
+        "sizeAdmin": {
+          "default": "desktop",
+          "title": "admin/newtailpartnerbr-newtail-media.banner.sizeAdmin.title",
+          "description": "admin/newtailpartnerbr-newtail-media.banner.sizeAdmin.description",
+          "type": "string"
+        },
+        "quantityAdmin": {
+          "default": 1,
+          "title": "admin/newtailpartnerbr-newtail-media.common.quantityAdmin.title",
+          "type": "string"
+        }
+      }
+    },
+    "NewtailMediaShelf": {
+      "type": "object",
+      "properties": {
+        "placementNameAdmin": {
+          "default": "banner",
+          "title": "admin/newtailpartnerbr-newtail-media.common.placementNameAdmin.title",
+          "type": "string"
+        },
+        "quantityAdmin": {
+          "default": 20,
+          "title": "admin/newtailpartnerbr-newtail-media.common.quantityAdmin.title",
+          "type": "string"
+        }
+      }
+    }
+  }
+}

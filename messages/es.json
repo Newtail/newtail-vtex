@@ -1,0 +1,29 @@
+{
+  "admin/newtailpartnerbr-newtail-media.common.placementNameAdmin.title": "Nombre del placement",
+  "admin/newtailpartnerbr-newtail-media.common.quantityAdmin.title": "Cantidad de anuncios",
+
+  "admin/newtailpartnerbr-newtail-media.shelf.title": "Newtail Media - Shelf",
+
+  "admin/newtailpartnerbr-newtail-media.banner.title": "Newtail Media - Banner",
+  "admin/newtailpartnerbr-newtail-media.banner.sizeAdmin.title": "Tamaño de Medios",
+  "admin/newtailpartnerbr-newtail-media.banner.sizeAdmin.description": "Use el mismo tamaño registrado en la plataforma de anuncios.",
+
+  "admin/newtailpartnerbr-newtail-media.search.title": "Newtail Media - Búsqueda",
+
+  "admin/newtailpartnerbr-newtail-media.search.tagPosition.title": "Posición de la etiqueta",
+  "admin/newtailpartnerbr-newtail-media.search.tagPosition.description": "Posición de la etiqueta",
+  "admin/newtailpartnerbr-newtail-media.search.tagPosition.start": "Inicio",
+  "admin/newtailpartnerbr-newtail-media.search.tagPosition.end": "Fin",
+
+  "admin/newtailpartnerbr-newtail-media.search.tagText.default": "Patrocinado",
+  "admin/newtailpartnerbr-newtail-media.search.tagText.title": "Texto de la etiqueta patrocinada",
+  "admin/newtailpartnerbr-newtail-media.search.tagText.description": "Por defecto, se usará 'patrocinado' con traducción automática. Para sobrescribir, complete este campo.",
+
+  "admin/newtailpartnerbr-newtail-media.search.tagClassname.title": "Clase de la etiqueta",
+  "admin/newtailpartnerbr-newtail-media.search.tagClassname.description": "Por defecto, se usará '.newtail-sponsored-tag'.",
+
+  "admin/newtailpartnerbr-newtail-media.search.parentSearchSelector.title": "[Avanzado] Elemento HTML para Insertar etiquetas",
+  "admin/newtailpartnerbr-newtail-media.search.parentSearchSelector.description": "Este campo debe ser editado solo por desarrolladores. Por defecto, se usará '.vtex-search-result-3-x-searchResultContainer #gallery-layout-container'.",
+
+  "admin/newtailpartnerbr-newtail-media.search.onlyFirstSKU.title": "Usar solo el primer SKU. Si está marcado, solo se usará el primer SKU del producto para buscar el producto en Newtail. Si no está marcado, se usarán todos los SKUs del producto para buscar el producto en Newtail."
+}

@@ -1,0 +1,99 @@
+{
+  "flex-layout.col#product-image": {
+    "children": ["product-summary-image#shelf"]
+  },
+
+  "product-summary-image#shelf": {
+    "props": {
+      "showBadge": true,
+      "aspectRatio": "1:1",
+      "maxHeight": 300
+    }
+  },
+
+  "product-list-price#summary": {
+    "props": {
+      "blockClass": "summary"
+    }
+  },
+  "product-selling-price#summary": {
+    "props": {
+      "blockClass": "summary"
+    }
+  },
+
+  "product-price-savings#summary": {
+    "props": {
+      "markers": ["discount"],
+      "blockClass": "summary"
+    }
+  },
+
+  "flex-layout.row#selling-price-savings": {
+    "props": {
+      "colGap": 1,
+      "preserveLayoutOnMobile": true,
+      "preventHorizontalStretch": true,
+      "marginBottom": 1,
+      "horizontalAlign": "center"
+    },
+    "children": ["product-list-price#summary", "product-selling-price#summary"]
+  },
+
+  "add-to-cart-button": {},
+
+  "product-sponsored-tag": {},
+
+  "product-summary.shelf": {
+    "children": [
+      "product-summary-image#shelf",
+      "product-summary-name",
+      "flex-layout.row#selling-price-savings",
+      "product-price-savings#summary",
+      "add-to-cart-button",
+      "product-sponsored-tag"
+    ]
+  },
+
+  "slider-layout#newtail-shelf": {
+    "props": {
+      "itemsPerPage": {
+        "desktop": 4,
+        "tablet": 1,
+        "phone": 1
+      },
+      "navigationStep": 1,
+      "infinite": true,
+      "fullWidth": false,
+      "blockClass": "shelf",
+      "showNavigationArrows": "desktopOnly",
+      "showPaginationDots": "never"
+    }
+  },
+
+  "list-context.product-list-static": {
+    "blocks": ["product-summary.shelf"],
+    "children": ["slider-layout#newtail-shelf"]
+  },
+
+  "slider-layout#newtail-shelf-with-video": {
+    "props": {
+      "itemsPerPage": {
+        "desktop": 2,
+        "tablet": 1,
+        "phone": 1
+      },
+      "navigationStep": 1,
+      "infinite": true,
+      "fullWidth": false,
+      "blockClass": "shelf",
+      "showNavigationArrows": "desktopOnly",
+      "showPaginationDots": "never"
+    }
+  },
+
+  "list-context.product-list-static#with-video": {
+    "blocks": ["product-summary.shelf"],
+    "children": ["slider-layout#newtail-shelf-with-video"]
+  }
+}

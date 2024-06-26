@@ -1,0 +1,29 @@
+{
+  "admin/newtailpartnerbr-newtail-media.common.placementNameAdmin.title": "Nome do placement",
+  "admin/newtailpartnerbr-newtail-media.common.quantityAdmin.title": "Quantidade de anúncios",
+
+  "admin/newtailpartnerbr-newtail-media.shelf.title": "Newtail Media - Shelf",
+
+  "admin/newtailpartnerbr-newtail-media.banner.title": "Newtail Media - Banner",
+  "admin/newtailpartnerbr-newtail-media.banner.sizeAdmin.title": "Tamanho da mídia",
+  "admin/newtailpartnerbr-newtail-media.banner.sizeAdmin.description": "Use o mesmo tamanho cadastrado na plataforma de anúncios.",
+
+  "admin/newtailpartnerbr-newtail-media.search.title": "Newtail Media - Busca",
+
+  "admin/newtailpartnerbr-newtail-media.search.tagPosition.title": "Posição da tag",
+  "admin/newtailpartnerbr-newtail-media.search.tagPosition.description": "Indique onde a tag deverá ser exibida dentro do card do produto",
+  "admin/newtailpartnerbr-newtail-media.search.tagPosition.start": "Começo",
+  "admin/newtailpartnerbr-newtail-media.search.tagPosition.end": "Fim",
+
+  "admin/newtailpartnerbr-newtail-media.search.tagText.default": "Patrocinado",
+  "admin/newtailpartnerbr-newtail-media.search.tagText.title": "Texto da tag patrocinada",
+  "admin/newtailpartnerbr-newtail-media.search.tagText.description": "Por padrão, será usado 'patrocinado' com tradução automática. Para substituir, preencha este campo.",
+
+  "admin/newtailpartnerbr-newtail-media.search.tagClassname.title": "Classe da Tag",
+  "admin/newtailpartnerbr-newtail-media.search.tagClassname.description": "Por padrão, será usado '.newtail-sponsored-tag'.",
+
+  "admin/newtailpartnerbr-newtail-media.search.parentSearchSelector.title": "[Avançado] Elemento HTML para Inserção de Tags",
+  "admin/newtailpartnerbr-newtail-media.search.parentSearchSelector.description": "Este campo deve ser editado apenas por desenvolvedores. Por padrão, será usado '.vtex-search-result-3-x-searchResultContainer #gallery-layout-container'.",
+
+  "admin/newtailpartnerbr-newtail-media.search.onlyFirstSKU.title": "Usar só primeiro SKU. Se marcado, será usado apenas o primeiro SKU do produto para busca no Newtail. Se desmarcado, serão usados todos os SKUs do produto para busca no Newtail."
+}

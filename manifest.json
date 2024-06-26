@@ -1,0 +1,54 @@
+{
+  "vendor": "vendor",
+  "name": "newtail-media",
+  "version": "2.0.5",
+  "title": "Newtail Media",
+  "description": "App de integração com o sistema de anúncios Newtail Media.",
+  "builders": {
+    "docs": "0.x",
+    "messages": "1.x",
+    "react": "3.x",
+    "store": "0.x",
+    "styles": "2.x",
+    "pixel": "0.x"
+  },
+  "dependencies": {
+    "vtex.device-detector": "0.x",
+    "vtex.product-summary": "2.x",
+    "vtex.slider-layout": "0.x",
+    "vtex.search-graphql": "0.x",
+    "vtex.session-client": "1.x",
+    "vtex.product-list-context": "0.x",
+    "vtex.search-page-context": "0.x",
+    "vtex.product-highlights": "2.x",
+    "vtex.flex-layout": "0.x",
+    "vtex.add-to-cart-button": "0.x",
+    "vtex.product-price": "1.x",
+    "vtex.product-context": "0.x",
+    "vtex.pixel-interfaces": "1.x",
+    "vtex.pixel-manager": "1.x",
+    "vtex.styleguide": "9.x",
+    "vtex.order-manager": "0.x",
+    "vtex.order-items": "0.x"
+  },
+  "registries": [
+    "smartcheckout"
+  ],
+  "policies": [
+    {
+      "name": "read-write-apps-settings"
+    }
+  ],
+  "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema",
+  "settingsSchema": {
+    "title": "Newtail Media",
+    "type": "object",
+    "properties": {
+      "publisherId": {
+        "title": "Publisher ID",
+        "description": "Insira seu publisher ID. Caso não saiba, entre em contato com comercial@newtail.com.br",
+        "type": "string"
+      }
+    }
+  }
+}

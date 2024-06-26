@@ -1,0 +1,42 @@
+{
+  "newtail-media-search": {
+    "component": "NewtailMediaSearch",
+    "content": {
+      "$ref": "#/definitions/NewtailMediaSearch"
+    }
+  },
+
+  "newtail-media-banner": {
+    "component": "NewtailMediaBanner",
+    "content": {
+      "$ref": "#/definitions/NewtailMediaBanner"
+    }
+  },
+
+  "newtail-media-shelf": {
+    "required": ["list-context.product-list-static"],
+    "allowed": ["product-summary.shelf"],
+    "component": "NewtailMediaShelf",
+    "content": {
+      "$ref": "#/definitions/NewtailMediaShelf"
+    }
+  },
+
+  "newtail-media-conversion": {
+    "component": "NewtailMediaConversion"
+  },
+
+  "pixel.newtail-media": {
+    "component": "Pixel"
+  },
+
+  "product-sponsored-tag": {
+    "component": "ProductSponsoredTag"
+  },
+
+  "newtail-media-with-video": {
+    "required": ["list-context.product-list-static"],
+    "allowed": ["product-summary.shelf"],
+    "component": "NewtailMediaVideoShelf"
+  }
+}
