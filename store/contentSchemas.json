@@ -13,7 +13,6 @@
           "type": "string"
         },
         "tagTextAdmin": {
-          "default": "Patrocinado",
           "title": "admin/newtailpartnerbr-newtail-media.search.tagText.title",
           "description": "admin/newtailpartnerbr-newtail-media.search.tagText.description",
           "type": "string"
@@ -75,7 +74,7 @@
       "type": "object",
       "properties": {
         "placementNameAdmin": {
-          "default": "banner",
+          "default": "products",
           "title": "admin/newtailpartnerbr-newtail-media.common.placementNameAdmin.title",
           "type": "string"
         },

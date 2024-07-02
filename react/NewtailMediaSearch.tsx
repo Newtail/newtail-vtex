@@ -5,6 +5,7 @@ import { defineMessages } from 'react-intl'
 
 import Search from './components/Search'
 import { NewtailMediaSearchProvider } from './hooks/useNewtailMediaSearch'
+import * as D from './settings'
 
 function NewtailMediaSearch(props: PropsWithChildren<NewtailMediaSearchProps>) {
   // console.log('🔵 🟡 🔎📚 Carregou Newtail Media :: Search 🔎📚 🔵 🟡')
@@ -85,12 +86,12 @@ NewtailMediaSearch.schema = {
       type: 'string',
     },
     onlyFirstSKU: {
-      default: 'search',
+      default: false,
       isLayout: true,
       type: 'string',
     },
     parentSearchSelector: {
-      default: 'search',
+      default: D.searchSelectorDefault,
       isLayout: true,
       type: 'string',
     },
@@ -100,17 +101,16 @@ NewtailMediaSearch.schema = {
       type: 'string',
     },
     tagClassname: {
-      default: 'search',
+      default: D.tagClassnameDefault,
       isLayout: true,
       type: 'string',
     },
     tagPosition: {
-      default: 'search',
+      default: 'start',
       isLayout: true,
       type: 'string',
     },
     tagText: {
-      default: 'search',
       isLayout: true,
       type: 'string',
     },

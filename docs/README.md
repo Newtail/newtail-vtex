@@ -1,6 +1,6 @@
 📢 Use this project, [contribute](https://github.com/{OrganizationName}/{AppName}) to it or open issues to help evolve it using [Store Discussion](https://github.com/vtex-apps/store-discussion).
 
-# APP NAME
+# Newtail Media Vtex
 
 <!-- DOCS-IGNORE:start -->
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
@@ -8,84 +8,120 @@
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- DOCS-IGNORE:end -->
 
-Under the app's name, you should explain the topic, giving a **brief description** of its **functionality** in a store when installed.
+[pt] O aplicativo Newtail Media tem a finalidade de fornecer componentes para implementar Retail Media em uma loja Vtex.      
 
-Next, **add media** (either an image of a GIF) with the rendered components, so that users can better understand how the app works in practice. 
+[en] The Newtail Media app provides components to implement Retail Media in a Vtex store.      
 
-![Media Placeholder](https://user-images.githubusercontent.com/52087100/71204177-42ca4f80-227e-11ea-89e6-e92e65370c69.png)
+[es] La aplicación Newtail Media proporciona componentes para implementar Retail Media en una tienda Vtex.
+
+
+## Implementação completa do fluxo de Retail media
+--- 
+
+[pt] Para mais detalhes sobre a implementação no tema, acesse: [a documentação](https://newtail-media.readme.io/reference/vtex)      
+
+[en] For more details on the implementation, visit: [the documentation](https://newtail-media.readme.io/reference/vtex)    
+
+[es] Para más detalles sobre la implementación, visite: [la documentación](https://newtail-media.readme.io/reference/vtex)
 
 ## Configuration 
 
-In this section, you first must **add the primary instructions** that will allow users to use the app's blocks in their store, such as:
+A configuração tem alguns passos:
 
-1. Adding the app as a theme dependency in the `manifest.json` file;
-2. Declaring the app's main block in a given theme template or inside another block from the theme.
+**Step 1** - Adding the app as a theme dependency in the `manifest.json` file;
 
-Remember to add a table with all blocks exported by the app and their descriptions. You can verify an example of it on the [Search Result documentation](https://vtex.io/docs/components/all/vtex.search-result@3.56.1/). 
+```json
+  {
+    "dependencies": {
+      "vendor.newtail-media": "2.x"
+    }
+  }
+```
 
-Next, add the **props table** containing your block's props. 
+**Step 2** - Adding publisher id on app config in the VTEX admin.
 
-If the app exports more than one block, create several tables - one for each block. For example:
+**Step 3** - Declaring the app's blocks in a given theme template or inside another block from the theme.
 
-### `block-1` props
+## Blocks
+---
 
-| Prop name    | Type            | Description    | Default value                                                                                                                               |
-| ------------ | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | 
-| `XXXXX`      | `XXXXXX`       | XXXXXXXX         | `XXXXXX`        |
-
-
-### `block-2` props
-
-| Prop name    | Type            | Description    | Default value                                                                                                                               |
-| ------------ | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | 
-| `XXXXX`      | `XXXXXX`       | XXXXXXXX         | `XXXXXX`        |
-
-Prop types are: 
-
-- `string` 
-- `enum` 
-- `number` 
-- `boolean` 
-- `object` 
-- `array` 
-
-When documenting a prop whose type is `object` or `array` another prop table will be needed. You can create it following the example below:
-
-- `propName` object:
-
-| Prop name    | Type            | Description    | Default value                                                                                                                               |
-| ------------ | --------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | 
-| `XXXXX`      | `XXXXXX`       | XXXXXXXX         | `XXXXXX`        |
+| Block name                   | Description      
+| ---------------------------- | ---------------------------------------------------------------------------------------------------------------- | 
+| `newtail-media-search`       | Componente para tratar os resultados da busca. Adiciona um selo patrocinados nos produtos patrocinado e pode reodenar os resultados.
+| `newtail-media-banner`       | Componente para renderizar banners patrocinados de acordo com o contexto da página.
+| `newtail-media-shelf`        | Componente para renderizar uma carrossel de produtos patrocinados de acordo com o contexto da página.
+| `newtail-media-conversion`   | Componente para tratar os eventos de conversão.
 
 
-Remember to also use this Configuration section to  **showcase any necessary disclaimer** related to the app and its blocks, such as the different behavior it may display during its configuration. 
+## Blocks props
+---
 
-## Modus Operandi *(not mandatory)*
+As propriedades dos blocos podem ser definidas pelo site-editor ou diretamente pelo bloco. A prioridade será para os dados inseridos no site-editor.
 
-There are scenarios in which an app can behave differently in a store, according to how it was added to the catalog, for example. It's crucial to go through these **behavioral changes** in this section, allowing users to fully understand the **practical application** of the app in their store.
+### `newtail-media-search`
+#### props block `isLayout: true`
+Propriedades disponibilizadas apenas na definição do bloco.
 
-If you feel compelled to give further details about the app, such as it's **relationship with the VTEX admin**, don't hesitate to use this section. 
+| Prop name                    | Type           | Default value          | Description      
+| ---------------------------- | -------------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------- | 
+| `quantity`                   | `number`       | `20`                   | Quantidade de anúncios solicitados.         
+| `placementName`              | `string`       | `search`               | Nome do placement usado na consulta.         
+| `tagText`                    | `string`       | `Patrocinado`          | Texto que será usado na tag. Por padrão, será patrocinado com tradução automática.         
+| `tagClassname`               | `string`       | `newtail-sponsored-tag`| Classe que será adicionada ao elemento HTML da tag.         
+| `tagPosition`                | `[start,end]`  | `start`                | Indica se a tag estará no começo ou no final do card de produto.         
+| `parentSearchSelector`       | `string`       | `in /settings`         | Indica o container que envolve o resultado da busca. Usamos o padrão do _store-theme_.         
+| `onlyFirstSKU`               | `boolean`      | `false`                | Indica se devemos olhar apenas o SKU principal ou todos SKUs atrelados.
+| `sponsoredSkusAtTop`         | `boolean`      | `true`                 | Indica se devemos reordenar o resultado de busca. Essa opção não deve ser usada com rolagem infinita.         
 
-## Customization
+#### props admin
+Propriedades disponibilizadas no site editor.
 
-The first thing that should be present in this section is the sentence below, showing users the recipe pertaining to CSS customization in apps:
+| Prop name                    | Type           | Default value          | Description      
+| ---------------------------- | -------------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------- | 
+| `quantityAdmin`              | `number`       | `20`                   | Quantidade de anúncios solicitados.         
+| `placementNameAdmin`         | `string`       | `search`               | Nome do placement usado na consulta.         
+| `tagTextAdmin`               | `string`       | `Patrocinado`          | Texto que será usado na tag. Por padrão, será patrocinado com tradução automática.         
+| `tagClassnameAdmin`          | `string`       | `newtail-sponsored-tag`| Classe que será adicionada ao elemento HTML da tag.         
+| `tagPositionAdmin`           | `[start,end]`  | `start`                | Indica se a tag estará no começo ou no final do card de produto.         
+| `parentSearchSelectorAdmin`  | `string`       | `in /settings`         | Indica o container que envolve o resultado da busca. Usamos o padrão do _store-theme_.         
+| `onlyFirstSKUAdmin`          | `boolean`      | `false`                | Indica se devemos olhar apenas o SKU principal ou todos SKUs atrelados.
 
-`In order to apply CSS customizations in this and other blocks, follow the instructions given in the recipe on [Using CSS Handles for store customization](https://vtex.io/docs/recipes/style/using-css-handles-for-store-customization).`
+### `newtail-media-banner`
+#### props block `isLayout: true`
+Propriedades disponibilizadas apenas na definição do bloco.
 
-Thereafter, you should add a single column table with the available CSS handles for the app, like the one below. Note that the Handles must be ordered alphabetically.
+| Prop name                    | Type           | Default value          | Description      
+| ---------------------------- | -------------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------- | 
+| `quantity`                   | `number`       | `1`                    | Quantidade de anúncios solicitados.         
+| `placementName`              | `string`       | `banner`               | Nome do placement usado na consulta.         
+| `size`                       | `string`       | `desktop`              | Tamanho da imagem que deverá ser soliticado. Mesmo valor cadastrado na plataforma de retail media.
 
-| CSS Handles |
-| ----------- | 
-| `XXXXX` | 
-| `XXXXX` | 
-| `XXXXX` | 
-| `XXXXX` | 
-| `XXXXX` |
+#### props admin
+Propriedades disponibilizadas no site editor.
 
+| Prop name                    | Type           | Default value          | Description      
+| ---------------------------- | -------------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------- | 
+| `quantityAdmin`              | `number`       | `1`                    | Quantidade de anúncios solicitados.         
+| `placementNameAdmin`         | `string`       | `banner`               | Nome do placement usado na consulta.         
+| `sizeAdmin`                  | `string`       | `desktop`              | Tamanho da imagem que deverá ser soliticado. Mesmo valor cadastrado na plataforma de retail media.
 
-If there are none, add the following sentence instead:
+### `newtail-media-shelf`
+#### props block `isLayout: true`
+Propriedades disponibilizadas apenas na definição do bloco.
 
-`No CSS Handles are available yet for the app customization.`
+| Prop name                    | Type           | Default value          | Description      
+| ---------------------------- | -------------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------- | 
+| `quantity`                   | `number`       | `20`                    | Quantidade de anúncios solicitados.         
+| `placementName`              | `string`       | `products`             | Nome do placement usado na consulta.         
+
+#### props admin
+Propriedades disponibilizadas no site editor.
+
+| Prop name                    | Type           | Default value          | Description      
+| ---------------------------- | -------------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------- | 
+| `quantityAdmin`              | `number`       | `20`                   | Quantidade de anúncios solicitados.         
+| `placementNameAdmin`         | `string`       | `products`             | Nome do placement usado na consulta.         
+
 
 <!-- DOCS-IGNORE:start -->
 
@@ -104,11 +140,3 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 
 <!-- DOCS-IGNORE:end -->
 
----- 
-
-Check out some documentation models that are already live: 
-- [Breadcrumb](https://github.com/vtex-apps/breadcrumb)
-- [Image](https://vtex.io/docs/components/general/vtex.store-components/image)
-- [Condition Layout](https://vtex.io/docs/components/all/vtex.condition-layout@1.1.6/)
-- [Add To Cart Button](https://vtex.io/docs/components/content-blocks/vtex.add-to-cart-button@0.9.0/)
-- [Store Form](https://vtex.io/docs/components/all/vtex.store-form@0.3.4/)

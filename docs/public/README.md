@@ -1,0 +1,1 @@
+Content for https://newtail-media.readme.io/reference/vtex
