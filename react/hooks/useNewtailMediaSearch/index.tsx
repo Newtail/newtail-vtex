@@ -187,6 +187,7 @@ const NewtailMediaSearchProvider: React.FC<NewtailMediaSearchProviderProps> = ({
     skusProductAds,
     sponsoredSkus,
     products,
+    sponsoredSkusAtTop,
     classNameTag,
     labelTag,
     tagPositionElement,
@@ -202,21 +203,24 @@ const NewtailMediaSearchProvider: React.FC<NewtailMediaSearchProviderProps> = ({
 
   const { handleAdsEvents } = useAdsEvents()
 
-  const handleEvents = (e: PixelMessage) => {
-    const eventName = e?.data?.eventName as ValidVtexEvent
+  const handleEvents = useCallback(
+    (e: PixelMessage) => {
+      const eventName = e?.data?.eventName as ValidVtexEvent
 
-    if (!eventName || !eventIsValid(eventName)) return
+      if (!eventName || !eventIsValid(eventName)) return
 
-    const eventData: EventData = e.data
+      const eventData: EventData = e.data
 
-    const skusEventData = getSkusEventData?.[eventName]?.(eventData as any)
+      const skusEventData = getSkusEventData?.[eventName]?.(eventData as any)
 
-    const adsData = productAds?.filter((ad) =>
-      skusEventData.includes(ad.product_sku)
-    )
+      const adsData = productAds?.filter((ad) =>
+        skusEventData.includes(ad.product_sku)
+      )
 
-    handleAdsEvents({ ads: adsData, event: eventName })
-  }
+      handleAdsEvents({ ads: adsData, event: eventName })
+    },
+    [handleAdsEvents, productAds]
+  )
 
   return (
     <NewtailMediaSearchContext.Provider

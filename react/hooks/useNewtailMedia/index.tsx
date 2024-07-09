@@ -15,6 +15,8 @@ import { useRuntime } from 'vtex.render-runtime'
 import { getNewtailMedia, postNewtailMediaConversionURL } from '../../services'
 import type { SessionSuccess } from '../../typings/vtex.session-client'
 import { getUserIdByEmail } from '../../helpers/getUserId'
+import { useAdsEvents } from '../useAdEvents'
+import { getSkusEventData } from '../useNewtailMediaSearch/utils'
 
 const NewtailMediaContext = createContext<NewtailMediaContextData | null>(
   {} as NewtailMediaContextData
@@ -277,6 +279,27 @@ const NewtailMediaProvider: React.FC<NewtailMediaProviderType> = ({
   )
 
   /**
+   * Handle product events
+   */
+
+  const { handleAdsEvents } = useAdsEvents()
+
+  const handleProductClickOnShelf = useCallback(
+    (data: OnProductClickData) => {
+      const eventName = 'vtex:productClickOnShelf'
+
+      const skusEventData = getSkusEventData?.[eventName]?.(data)
+
+      const adsData = products?.filter((ad) =>
+        skusEventData.includes(ad.product_sku)
+      )
+
+      handleAdsEvents({ ads: adsData, event: eventName })
+    },
+    [handleAdsEvents, products]
+  )
+
+  /**
    * Handle conversion
    */
 
@@ -310,7 +333,7 @@ const NewtailMediaProvider: React.FC<NewtailMediaProviderType> = ({
 
       const body = {
         publisher_id: publisherId,
-        user_id: verifiedUserId,
+        user_id: verifiedUserId || email,
         session_id: sessionId,
         order_id: data.ordersInOrderGroup?.[0] || data.orderGroup,
         items: formatItens(data.transactionProducts),
@@ -335,6 +358,7 @@ const NewtailMediaProvider: React.FC<NewtailMediaProviderType> = ({
         banners,
         placement,
         handleEvents,
+        handleProductClickOnShelf,
         handleConversion,
       }}
     >

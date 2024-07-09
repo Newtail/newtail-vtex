@@ -67,6 +67,7 @@ export const useAdsEvents: UseAdEvents = () => {
         'vtex:productImpression': 'impression',
         'vtex:productView': 'view',
         'vtex:productClick': 'click',
+        'vtex:productClickOnShelf': 'click',
       }
 
       const eventKey = eventsKeys[event]

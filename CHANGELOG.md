@@ -1,6 +1,7 @@
 # Changelog
 
-## [Unreleased]
+## [2.0.6]
+- Change click event on shelf
 
 ## [2.0.5] - 2024-06-26
 

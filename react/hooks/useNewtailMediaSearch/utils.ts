@@ -15,13 +15,15 @@ const extractSkus = {
     return extractSkusFromItems(items)
   },
   clicks: (data: ProductClickData) => extractSkusFromItems(data.product.items),
+  clicksOnShelf: (data: OnProductClickData) => extractSkusFromItems(data.items),
   views: (data: ProductViewData) => extractSkusFromItems(data.product.items),
 }
 
 export const getSkusEventData: GetSkusEventData = {
   'vtex:productImpression': (data) => extractSkus.impressions(data),
-  'vtex:productView': (data) => extractSkus.clicks(data),
-  'vtex:productClick': (data) => extractSkus.views(data),
+  'vtex:productView': (data) => extractSkus.views(data),
+  'vtex:productClick': (data) => extractSkus.clicks(data),
+  'vtex:productClickOnShelf': (data) => extractSkus.clicksOnShelf(data),
 }
 
 const validEvents: ValidVtexEvent[] = Object.keys(

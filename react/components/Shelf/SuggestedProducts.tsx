@@ -1,12 +1,16 @@
 import React from 'react'
 import { ExtensionPoint } from 'vtex.render-runtime'
 
+import { useNewtailMedia } from '../../hooks/useNewtailMedia'
+
 interface Props {
   title?: string
   products: Product[]
 }
 
 const SuggestedProducts = ({ title, products }: Props) => {
+  const { handleProductClickOnShelf } = useNewtailMedia()
+
   function sumAvailableQuantity(items: Item[]) {
     let totalQuantity = 0
 
@@ -33,6 +37,9 @@ const SuggestedProducts = ({ title, products }: Props) => {
           id="list-context.product-list-static"
           products={filteredProducts}
           hideUnavailableItems
+          actionOnProductClick={(data: OnProductClickData) =>
+            handleProductClickOnShelf(data)
+          }
         />
       )}
     </div>

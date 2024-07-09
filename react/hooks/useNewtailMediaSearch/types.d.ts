@@ -13,11 +13,13 @@ type ValidVtexEvent =
   | 'vtex:productImpression'
   | 'vtex:productView'
   | 'vtex:productClick'
+  | 'vtex:productClickOnShelf'
 
 type GetSkusEventData = {
   'vtex:productImpression': (eventData: ProductImpressionData) => string[]
-  'vtex:productView': (eventData: ProductClickData) => string[]
-  'vtex:productClick': (eventData: ProductViewData) => string[]
+  'vtex:productView': (eventData: ProductViewData) => string[]
+  'vtex:productClick': (eventData: ProductClickData) => string[]
+  'vtex:productClickOnShelf': (eventData: OnProductClickData) => string[]
 }
 
 type EventData = ProductImpressionData | ProductClickData | ProductViewData

@@ -8,4 +8,5 @@ type NewtailMediaContextData = {
   banners: BannerAd[] | null
   handleConversion(data: Order): void
   handleEvents(data: HandleEvents): void
+  handleProductClickOnShelf: (data: OnProductClickData) => void
 }
