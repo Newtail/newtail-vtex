@@ -62,6 +62,10 @@ const messages = defineMessages({
     id: 'admin/newtailpartnerbr-newtail-media.search.tagClassname.description',
     defaultMessage: '',
   },
+  'search.tagText.default': {
+    id: 'admin/newtailpartnerbr-newtail-media.search.tagText.default',
+    defaultMessage: '',
+  },
   'search.parentSearchSelector.title': {
     id: 'admin/newtailpartnerbr-newtail-media.search.parentSearchSelector.title',
     defaultMessage: '',

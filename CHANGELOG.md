@@ -1,5 +1,9 @@
 # Changelog
 
+## [2.0.7]
+- Adding departament context
+- Refactoring same hooks
+- 
 ## [2.0.6]
 - Change click event on shelf
 

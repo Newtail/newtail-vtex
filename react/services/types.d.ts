@@ -31,33 +31,63 @@ interface AdsRequest {
   body: RequestBody
 }
 
+type PageDataContextType =
+  | AdContext
+  | 'brand'
+  | 'product'
+  | 'category'
+  | 'subcategory'
+  | 'department'
+
+type CategoryContextData = {
+  context: 'category'
+  category_name: string | null
+}
+
+type BrandPageContextData = {
+  context: 'brand_page'
+  brand_name: string | null
+}
+
+type SearchContextData = {
+  context: 'search'
+  term: string | null
+}
+
+type HomeContextData = {
+  context: 'home'
+}
+
+type ProductPageContextData = {
+  context: 'product_page'
+  product_sku: string
+}
+
 type RequestBody =
   | {
+      skus?: string[]
       session_id: string
       user_id?: string
       device: 'mobile' | 'desktop'
-      context: T
-      term?: string
-      category_name?: string
-      product_sku?: string
-      brand_name?: string
-    }
-  | {
-      context: 'search'
-      term: string
-    }
-  | {
-      context: 'category'
-      category_name: string
-    }
-  | {
-      context: 'product'
-      product_sku: string
-    }
-  | {
-      context: 'brand'
-      brand_name: string
-    }
+      placements: {
+        [key: string]:
+          | {
+              quantity: number
+              types: ['product']
+            }
+          | {
+              size: string
+              quantity: number
+              types: ['banner']
+            }
+      }
+    } & (
+      | CategoryContextData
+      | BrandPageContextData
+      | SearchContextData
+      | HomeContextData
+      | ProductPageContextData
+    )
 
 /**
  * Conversão

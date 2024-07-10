@@ -7,35 +7,18 @@ import React, {
   useContext,
   useMemo,
 } from 'react'
-// import axios from 'axios'
-import { useDevice } from 'vtex.device-detector'
 import { useRenderSession } from 'vtex.session-client'
-import { useRuntime } from 'vtex.render-runtime'
 
 import { getNewtailMedia, postNewtailMediaConversionURL } from '../../services'
 import type { SessionSuccess } from '../../typings/vtex.session-client'
 import { getUserIdByEmail } from '../../helpers/getUserId'
 import { useAdsEvents } from '../useAdEvents'
 import { getSkusEventData } from '../useNewtailMediaSearch/utils'
+import { useRequestBody } from '../useNewtailMediaSearch/formatRequestBody'
 
 const NewtailMediaContext = createContext<NewtailMediaContextData | null>(
   {} as NewtailMediaContextData
 )
-
-const AdTypesKeys = {
-  product: 'product',
-  banner: 'banner',
-} as { [key in AdTypes]: AdTypes }
-
-// home, category, search, product_page, brand_page
-
-const AdContextKeys = {
-  home: 'home',
-  category: 'category',
-  search: 'search',
-  product_page: 'product_page',
-  brand_page: 'brand_page',
-} as { [key in AdContext]: AdContext }
 
 type NewtailMediaProviderType = {
   adType: AdTypes | 'conversion'
@@ -84,116 +67,18 @@ const NewtailMediaProvider: React.FC<NewtailMediaProviderType> = ({
   )
 
   /**
-   * Handle device type
-   */
-  const { isMobile } = useDevice()
-
-  const device = useMemo(() => (isMobile ? 'mobile' : 'desktop'), [isMobile])
-
-  /**
-   * Handle term
-   */
-
-  const { query: queryRaw, route } = useRuntime()
-
-  // console.log(route)
-
-  const term = useMemo(() => queryRaw?._q ?? null, [queryRaw])
-  const categoryName = useMemo(() => route?.params?.category || null, [route])
-  const brandName = useMemo(() => route?.params?.brand || null, [route])
-
-  /**
-   * Handle context
-   */
-
-  const context = useMemo(() => {
-    const type = route?.pageContext?.type as AdContext | 'brand' | 'product'
-
-    if (type in AdContextKeys) {
-      return type
-    }
-
-    if (type === 'brand' && term) {
-      return AdContextKeys.search
-    }
-
-    if (type === 'brand') {
-      return AdContextKeys.brand_page
-    }
-
-    if (type === 'product') {
-      return AdContextKeys.product_page
-    }
-
-    return AdContextKeys.search
-  }, [route, term])
-
-  /**
    * Handle request payload
    */
-  const adTypes = AdTypesKeys
 
-  const placements = useMemo(
-    () => ({
-      [adTypes.product]: {
-        [placement]: {
-          quantity: quantityAds,
-          types: ['product'],
-        },
-      },
-      [adTypes.banner]: {
-        [placement]: {
-          quantity: quantityAds,
-          size: mediaSize,
-          types: ['banner'],
-        },
-      },
-    }),
-    [adTypes.banner, adTypes.product, mediaSize, placement, quantityAds]
-  )
+  const requestBody = useRequestBody({
+    placement,
+    adType: adType as AdTypes,
+    mediaSize,
+    quantityAds,
+  })
 
-  const requestBody = useMemo(
-    () =>
-      ({
-        context,
-        term,
-        device,
-        user_id: userId,
-        session_id: sessionId,
-        placements: placements[adType],
-        category_name:
-          context === AdContextKeys.category ? categoryName : undefined,
-        brand_name:
-          context === AdContextKeys.brand_page ? brandName : undefined,
-      } as RequestBody),
-    [
-      context,
-      term,
-      device,
-      userId,
-      sessionId,
-      placements,
-      adType,
-      categoryName,
-      brandName,
-    ]
-  )
-
-  const handleRequestAds = useCallback(async () => {
-    if (!sessionId || adType === 'conversion') {
-      return
-    }
-
-    try {
-      setLoading(true)
-
-      // console.log('🚨 Request Body:', requestBody)
-
-      const { data } = await getNewtailMedia({
-        publisherId,
-        body: requestBody,
-      })
-
+  const handleResponse = useCallback(
+    (data: AdsResponse) => {
       const response = data?.[placement]
 
       if (!response) return
@@ -210,14 +95,30 @@ const NewtailMediaProvider: React.FC<NewtailMediaProviderType> = ({
 
         setBanners(adsData)
       }
+    },
+    [adType, placement]
+  )
 
-      // console.log(data)
+  const handleRequestAds = useCallback(async () => {
+    if (!sessionId || adType === 'conversion') return
+
+    try {
+      setLoading(true)
+
+      if (!requestBody) return
+
+      const { data } = await getNewtailMedia({
+        publisherId,
+        body: requestBody,
+      })
+
+      handleResponse(data)
     } catch (error) {
       console.log(error)
     } finally {
       setLoading(false)
     }
-  }, [adType, placement, publisherId, requestBody, sessionId])
+  }, [adType, handleResponse, publisherId, requestBody, sessionId])
 
   useEffect(() => {
     if (adType !== 'conversion') {

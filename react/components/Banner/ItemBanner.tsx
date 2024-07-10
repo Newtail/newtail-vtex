@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useRef } from 'react'
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 import { useNewtailMedia } from '../../hooks/useNewtailMedia'
 import { useOnView } from '../../hooks/useOnView'
@@ -6,6 +6,24 @@ import { useOnView } from '../../hooks/useOnView'
 // import { Container } from './styles';
 
 const ItemBanner = ({ data }: { data: BannerAd }) => {
+  const [imageSize, setImageSize] = useState<{
+    width: number | string
+    height: number | string
+  }>({
+    height: 'auto',
+    width: 'auto',
+  })
+
+  useEffect(() => {
+    if (!data.media_url) return
+    const img = new Image()
+
+    img.src = data.media_url
+    img.onload = () => {
+      setImageSize({ width: img.width, height: img.height })
+    }
+  }, [data.media_url])
+
   const bannerRef = useRef<HTMLDivElement | null>(null)
 
   const { handleEvents } = useNewtailMedia()
@@ -45,28 +63,37 @@ const ItemBanner = ({ data }: { data: BannerAd }) => {
     handleImpression()
   }, [handleImpression])
 
-  return (
+  const ImageHTML = () => (
     <>
-      {data.destination_url ? (
-        <div ref={bannerRef}>
-          <a href={data.destination_url} onClick={handleClick}>
-            <img
-              src={data.media_url}
-              alt="Banner"
-              className="newtail-media-banner__image"
-            />
-          </a>
-        </div>
-      ) : (
-        <div ref={bannerRef}>
-          <img
-            src={data.media_url}
-            alt="Banner"
-            className="newtail-media-banner__image"
-          />
-        </div>
-      )}
+      <style>
+        {`
+          .newtail-media-banner__image {
+            max-width: ${imageSize.width}px;
+            max-height: ${imageSize.height}px;
+            margin: auto;
+          }
+        `}
+      </style>
+      <img
+        src={data.media_url}
+        alt="Banner"
+        className="newtail-media-banner__image"
+        width={imageSize.width}
+        height={imageSize.height}
+      />
     </>
+  )
+
+  return (
+    <div ref={bannerRef}>
+      {data.destination_url ? (
+        <a href={data.destination_url} onClick={handleClick}>
+          <ImageHTML />
+        </a>
+      ) : (
+        <ImageHTML />
+      )}
+    </div>
   )
 }
 
