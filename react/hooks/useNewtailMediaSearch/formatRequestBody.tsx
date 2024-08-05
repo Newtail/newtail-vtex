@@ -36,6 +36,7 @@ export const useRequestBody: FormatRequestBody = ({
 }) => {
   const { sessionId, userId } = useSessionData()
   const { context, term, brandName, categoryName } = usePageContext()
+  
   const device = useDeviceType()
 
   const contextData: ContextData = useMemo(

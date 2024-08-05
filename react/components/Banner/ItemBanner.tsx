@@ -67,7 +67,7 @@ const ItemBanner = ({ data }: { data: BannerAd }) => {
     <>
       <style>
         {`
-          .newtail-media-banner__image {
+          .newtail-media-banner__image.newtail-media-banner__${data.ad_id} {
             max-width: ${imageSize.width}px;
             max-height: ${imageSize.height}px;
             margin: auto;
@@ -77,7 +77,7 @@ const ItemBanner = ({ data }: { data: BannerAd }) => {
       <img
         src={data.media_url}
         alt="Banner"
-        className="newtail-media-banner__image"
+        className={`newtail-media-banner__image newtail-media-banner__${data.ad_id}`}
         width={imageSize.width}
         height={imageSize.height}
       />

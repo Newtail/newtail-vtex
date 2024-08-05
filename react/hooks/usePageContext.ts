@@ -30,6 +30,9 @@ export const usePageContext = () => {
       case 'department':
         return AdContextKeys.category
 
+      case 'route':
+          return AdContextKeys.home
+
       default:
         return type in AdContextKeys
           ? (type as AdContext)

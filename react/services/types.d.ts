@@ -38,6 +38,7 @@ type PageDataContextType =
   | 'category'
   | 'subcategory'
   | 'department'
+  | 'route'
 
 type CategoryContextData = {
   context: 'category'
