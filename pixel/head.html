@@ -1,5 +1,5 @@
 <script>
-  if ('{{ settings.publisherId }}'.length) {
+  if ('{{ settings.publisherId }}'?.length) {
     window.newtailMedia = {
       publisherId: '{{ settings.publisherId }}',
     }

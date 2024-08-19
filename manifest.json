@@ -1,7 +1,7 @@
 {
-  "vendor": "vendor",
+  "vendor": "newtailpartnerbr",
   "name": "newtail-media",
-  "version": "2.0.7",
+  "version": "2.0.10",
   "title": "Newtail Media",
   "description": "App de integração com o sistema de anúncios Newtail Media.",
   "builders": {
@@ -31,9 +31,7 @@
     "vtex.order-manager": "0.x",
     "vtex.order-items": "0.x"
   },
-  "registries": [
-    "smartcheckout"
-  ],
+  "registries": ["smartcheckout"],
   "policies": [
     {
       "name": "read-write-apps-settings"
@@ -46,7 +44,7 @@
     "properties": {
       "publisherId": {
         "title": "Publisher ID",
-        "description": "Insira seu publisher ID. Caso não saiba, entre em contato com comercial@newtail.com.br",
+        "description": "[pt-br] Insira seu publisher ID. Caso não saiba, entre em contato com comercial@newtail.com.br. \n - [en] Enter your publisher ID. If you don't know it, please contact comercial@newtail.com.br. \n - [es] Ingrese su publisher ID. Si no lo sabe, póngase en contacto con comercial@newtail.com.br.",
         "type": "string"
       }
     }

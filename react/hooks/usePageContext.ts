@@ -16,6 +16,8 @@ export const usePageContext = () => {
 
   const context = useMemo(() => {
     const type = route?.pageContext?.type as PageDataContextType
+    const pageContextId = route?.pageContext?.id as string
+    const isHome = pageContextId === 'store.home'
 
     switch (type) {
       case 'brand':
@@ -30,10 +32,9 @@ export const usePageContext = () => {
       case 'department':
         return AdContextKeys.category
 
-      case 'route':
-          return AdContextKeys.home
-
       default:
+        if (isHome) return AdContextKeys.home
+
         return type in AdContextKeys
           ? (type as AdContext)
           : AdContextKeys.search

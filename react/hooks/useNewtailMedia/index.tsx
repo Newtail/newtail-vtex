@@ -31,13 +31,19 @@ const NewtailMediaProvider: React.FC<NewtailMediaProviderType> = ({
   placementNameAdmin,
   size,
   sizeAdmin,
+  sizeMobile,
+  sizeMobileAdmin,
   quantity,
   quantityAdmin,
+  categoryName: categoryNameProps,
+  categoryNameAdmin,
 }) => {
   const publisherId = window?.newtailMedia?.publisherId
 
   const placement = placementNameAdmin || placementName || adType || 'placement'
-  const mediaSize = size || sizeAdmin || 'desktop'
+  const mediaSize = sizeAdmin || size || 'desktop'
+  const categoryName = categoryNameAdmin || categoryNameProps
+  const mobileMediaSize = sizeMobileAdmin || sizeMobile
   const quantityAds = Number(quantityAdmin) || quantity || 1
 
   const [loading, setLoading] = useState(true)
@@ -74,7 +80,9 @@ const NewtailMediaProvider: React.FC<NewtailMediaProviderType> = ({
     placement,
     adType: adType as AdTypes,
     mediaSize,
+    mobileMediaSize,
     quantityAds,
+    categoryName,
   })
 
   const handleResponse = useCallback(

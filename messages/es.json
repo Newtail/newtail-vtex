@@ -1,12 +1,16 @@
 {
   "admin/newtailpartnerbr-newtail-media.common.placementNameAdmin.title": "Nombre del placement",
   "admin/newtailpartnerbr-newtail-media.common.quantityAdmin.title": "Cantidad de anuncios",
+  "admin/newtailpartnerbr-newtail-media.common.categoryNameAdmin.title": "Categoría (Avanzado)",
+  "admin/newtailpartnerbr-newtail-media.common.categoryNameAdmin.description": "Use en campos en páginas que no tienen contexto y necesitan forzar alguna categoría para el banner o en casos específicos.",
 
   "admin/newtailpartnerbr-newtail-media.shelf.title": "Newtail Media - Shelf",
 
   "admin/newtailpartnerbr-newtail-media.banner.title": "Newtail Media - Banner",
-  "admin/newtailpartnerbr-newtail-media.banner.sizeAdmin.title": "Tamaño de Medios",
+  "admin/newtailpartnerbr-newtail-media.banner.sizeAdmin.title": "Tamaño de Medios (desktop)",
   "admin/newtailpartnerbr-newtail-media.banner.sizeAdmin.description": "Use el mismo tamaño registrado en la plataforma de anuncios.",
+  "admin/newtailpartnerbr-newtail-media.banner.sizeMobileAdmin.title": "Tamaño de Medios Móviles (opcional)",
+  "admin/newtailpartnerbr-newtail-media.banner.sizeMobileAdmin.description": "Use el mismo tamaño registrado en la plataforma de anuncios. Si no se pasa, se usará el valor del tamaño de medios de escritorio.",
 
   "admin/newtailpartnerbr-newtail-media.search.title": "Newtail Media - Búsqueda",
 

@@ -8,6 +8,8 @@ type FormatRequestBodyProps = {
   skus?: string[]
   placement: string
   mediaSize?: string
+  mobileMediaSize?: string
+  categoryName?: string
   quantityAds?: number
   adType?: AdTypes
 }
@@ -32,12 +34,17 @@ export const useRequestBody: FormatRequestBody = ({
   placement = 'search',
   quantityAds = 20,
   mediaSize,
+  mobileMediaSize,
   adType = 'product',
+  categoryName: categoryNameOverride,
 }) => {
   const { sessionId, userId } = useSessionData()
   const { context, term, brandName, categoryName } = usePageContext()
-  
+
   const device = useDeviceType()
+
+  const mediaSizeByDevice =
+    device === 'mobile' && mobileMediaSize ? mobileMediaSize : mediaSize
 
   const contextData: ContextData = useMemo(
     () => ({
@@ -65,10 +72,21 @@ export const useRequestBody: FormatRequestBody = ({
     [brandName, categoryName, skus, term]
   )
 
+  const contextDataFinal = useMemo(() => {
+    if (categoryNameOverride) {
+      return {
+        context: contextData?.[context].context,
+        category_name: categoryNameOverride,
+      }
+    }
+
+    return contextData?.[context]
+  }, [categoryNameOverride, context, contextData])
+
   const placementData = useMemo(
     () => ({
       [adTypesKeys.banner]: {
-        size: mediaSize,
+        size: mediaSizeByDevice,
         quantity: quantityAds,
         types: [adTypesKeys.banner],
       },
@@ -77,7 +95,7 @@ export const useRequestBody: FormatRequestBody = ({
         types: [adTypesKeys.product],
       },
     }),
-    [mediaSize, quantityAds]
+    [mediaSizeByDevice, quantityAds]
   )
 
   const body = useMemo(
@@ -92,12 +110,11 @@ export const useRequestBody: FormatRequestBody = ({
             placements: {
               [placement]: placementData[adType],
             },
-            ...contextData?.[context],
+            ...contextDataFinal,
           } as RequestBody),
     [
       adType,
-      context,
-      contextData,
+      contextDataFinal,
       device,
       placement,
       placementData,

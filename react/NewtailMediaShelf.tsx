@@ -29,6 +29,14 @@ const messages = defineMessages({
     id: 'admin/newtailpartnerbr-newtail-media.common.quantityAdmin.title',
     defaultMessage: '',
   },
+  'common.categoryNameAdmin.title': {
+    id: 'admin/newtailpartnerbr-newtail-media.common.categoryNameAdmin.title',
+    defaultMessage: '',
+  },
+  'common.categoryNameAdmin.description': {
+    id: 'admin/newtailpartnerbr-newtail-media.common.categoryNameAdmin.description',
+    defaultMessage: '',
+  },
 })
 
 NewtailMediaShelf.schema = {
@@ -42,6 +50,11 @@ NewtailMediaShelf.schema = {
     },
     quantity: {
       default: 20,
+      isLayout: true,
+      type: 'string',
+    },
+    categoryName: {
+      default: null,
       isLayout: true,
       type: 'string',
     },

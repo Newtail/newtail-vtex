@@ -63,9 +63,21 @@
           "description": "admin/newtailpartnerbr-newtail-media.banner.sizeAdmin.description",
           "type": "string"
         },
+        "sizeMobileAdmin": {
+          "default": null,
+          "title": "admin/newtailpartnerbr-newtail-media.banner.sizeMobileAdmin.title",
+          "description": "admin/newtailpartnerbr-newtail-media.banner.sizeMobileAdmin.description",
+          "type": "string"
+        },
         "quantityAdmin": {
           "default": 1,
           "title": "admin/newtailpartnerbr-newtail-media.common.quantityAdmin.title",
+          "type": "string"
+        },
+        "categoryNameAdmin": {
+          "default": null,
+          "title": "admin/newtailpartnerbr-newtail-media.common.categoryNameAdmin.title",
+          "description": "admin/newtailpartnerbr-newtail-media.common.categoryNameAdmin.description",
           "type": "string"
         }
       }
@@ -81,6 +93,12 @@
         "quantityAdmin": {
           "default": 20,
           "title": "admin/newtailpartnerbr-newtail-media.common.quantityAdmin.title",
+          "type": "string"
+        },
+        "categoryNameAdmin": {
+          "default": null,
+          "title": "admin/newtailpartnerbr-newtail-media.common.categoryNameAdmin.title",
+          "description": "admin/newtailpartnerbr-newtail-media.common.categoryNameAdmin.description",
           "type": "string"
         }
       }

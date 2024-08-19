@@ -68,7 +68,9 @@ const ItemBanner = ({ data }: { data: BannerAd }) => {
       <style>
         {`
           .newtail-media-banner__image.newtail-media-banner__${data.ad_id} {
+            width: 100vw;
             max-width: ${imageSize.width}px;
+            height: auto;
             max-height: ${imageSize.height}px;
             margin: auto;
           }

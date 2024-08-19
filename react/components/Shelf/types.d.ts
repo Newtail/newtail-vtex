@@ -3,6 +3,8 @@ type NewtailMediaShelfProps = {
   placementNameAdmin?: string
   quantity?: number
   quantityAdmin?: string
+  categoryName?: string
+  categoryNameAdmin?: string
 }
 
 interface OnProductClickData {

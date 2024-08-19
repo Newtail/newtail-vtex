@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "properties": {
+    "product": {
+      "title": "Produto",
+      "type": "object"
+    },
+    "actionOnClick": {
+      "title": "Ação ao clicar",
+      "type": "funcition"
+    }
+  }
+}

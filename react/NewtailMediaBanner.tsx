@@ -33,8 +33,24 @@ const messages = defineMessages({
     id: 'admin/newtailpartnerbr-newtail-media.banner.sizeAdmin.description',
     defaultMessage: '',
   },
+  'banner.sizeMobileAdmin.title': {
+    id: 'admin/newtailpartnerbr-newtail-media.banner.sizeMobileAdmin.title',
+    defaultMessage: '',
+  },
+  'banner.sizeMobileAdmin.description': {
+    id: 'admin/newtailpartnerbr-newtail-media.banner.sizeMobileAdmin.description',
+    defaultMessage: '',
+  },
   'common.quantityAdmin.title': {
     id: 'admin/newtailpartnerbr-newtail-media.common.quantityAdmin.title',
+    defaultMessage: '',
+  },
+  'common.categoryNameAdmin.title': {
+    id: 'admin/newtailpartnerbr-newtail-media.common.categoryNameAdmin.title',
+    defaultMessage: '',
+  },
+  'common.categoryNameAdmin.description': {
+    id: 'admin/newtailpartnerbr-newtail-media.common.categoryNameAdmin.description',
     defaultMessage: '',
   },
 })
@@ -49,12 +65,22 @@ NewtailMediaBanner.schema = {
       type: 'string',
     },
     size: {
-      default: 'banner',
+      default: 'dekstop',
+      isLayout: true,
+      type: 'string',
+    },
+    sizeMobile: {
+      default: null,
       isLayout: true,
       type: 'string',
     },
     quantity: {
       default: 1,
+      isLayout: true,
+      type: 'string',
+    },
+    categoryName: {
+      default: null,
       isLayout: true,
       type: 'string',
     },
