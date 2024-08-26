@@ -148,7 +148,7 @@ const NewtailMediaSearchProvider: React.FC<NewtailMediaSearchProviderProps> = ({
       if (!searchResultItem) return
 
       const itemElements = container.querySelectorAll(
-        `a[href='${searchResultItem.link}']`
+        `a[href*='${searchResultItem.link}']`
       )
 
       itemElements.forEach((element) => {
@@ -156,6 +156,7 @@ const NewtailMediaSearchProvider: React.FC<NewtailMediaSearchProviderProps> = ({
           // handle product summary container
           // div.vtex-search-result-3-x-galleryItem > section.vtex-product-summary-2-x-container
           const sectionParent = element?.parentElement
+          
           const containerParent = sectionParent?.parentElement
 
           if (containerParent) {

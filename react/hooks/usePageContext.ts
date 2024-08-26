@@ -14,9 +14,12 @@ export const usePageContext = () => {
 
   const term = useMemo(() => queryRaw?._q ?? null, [queryRaw])
 
+  const type = route?.pageContext?.type as PageDataContextType
+  const pageContextId = route?.pageContext?.id as string
+  const productSKU = route?.queryString?.skuId as string
+
   const context = useMemo(() => {
-    const type = route?.pageContext?.type as PageDataContextType
-    const pageContextId = route?.pageContext?.id as string
+    
     const isHome = pageContextId === 'store.home'
 
     switch (type) {
@@ -39,7 +42,7 @@ export const usePageContext = () => {
           ? (type as AdContext)
           : AdContextKeys.search
     }
-  }, [route, term])
+  }, [route, term, pageContextId])
 
   const categoryName = useMemo(() => {
     const categoryRaw = route?.params?.category || route.params?.department
@@ -49,5 +52,5 @@ export const usePageContext = () => {
 
   const brandName = useMemo(() => route?.params?.brand || null, [route])
 
-  return { context, term, brandName, categoryName }
+  return { context, term, brandName, categoryName, productSKU}
 }

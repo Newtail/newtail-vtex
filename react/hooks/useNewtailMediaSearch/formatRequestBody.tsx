@@ -39,7 +39,8 @@ export const useRequestBody: FormatRequestBody = ({
   categoryName: categoryNameOverride,
 }) => {
   const { sessionId, userId } = useSessionData()
-  const { context, term, brandName, categoryName } = usePageContext()
+  const { context, term, brandName, categoryName, productSKU } =
+    usePageContext()
 
   const device = useDeviceType()
 
@@ -66,10 +67,10 @@ export const useRequestBody: FormatRequestBody = ({
       },
       product_page: {
         context: 'product_page',
-        product_sku: '',
+        product_sku: productSKU,
       },
     }),
-    [brandName, categoryName, skus, term]
+    [brandName, categoryName, productSKU, skus, term]
   )
 
   const contextDataFinal = useMemo(() => {

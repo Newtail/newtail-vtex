@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [2.0.12] - 2024-08-23
+
+## [2.0.11] - 2024-08-21
+- Change default props slider layout
+- Fix sintaxe error(vtex) on pixel
+
 ## [2.0.10] - 2024-08-16
 - improve resquest body - category name override
 
@@ -9,6 +15,7 @@
 - Home context with category home when banner ads
 - Ad size for mobile
 - Declare category name for without context page
+
 
 ## [2.0.8] - 2024-08-05
 - Home context

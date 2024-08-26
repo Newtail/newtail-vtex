@@ -2227,10 +2227,6 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
-"bemolqa.newtail-media@http://bemolqa.vtexassets.com/_v/public/typings/v1/bemolqa.newtail-media@2.0.8/public/@types/bemolqa.newtail-media":
-  version "2.0.8"
-  resolved "http://bemolqa.vtexassets.com/_v/public/typings/v1/bemolqa.newtail-media@2.0.8/public/@types/bemolqa.newtail-media#2c59fa67091c0f9620afa2452c374149d3accb39"
-
 brace-expansion@^1.1.7:
   version "1.1.11"
   resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-1.1.11.tgz#3c7fcbf529d87226f3d2f52b966ff5271eb441dd"
@@ -4195,6 +4191,10 @@ natural-compare@^1.4.0:
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==
 
+"newtailpartnerbr.newtail-media@https://newtail--newtailpartnerbr.myvtex.com/_v/private/typings/linked/v1/newtailpartnerbr.newtail-media@2.0.7+build1720810597/public/@types/newtailpartnerbr.newtail-media":
+  version "2.0.7"
+  resolved "https://newtail--newtailpartnerbr.myvtex.com/_v/private/typings/linked/v1/newtailpartnerbr.newtail-media@2.0.7+build1720810597/public/@types/newtailpartnerbr.newtail-media#5dd6d48f1668347fda0b0ccac0720ed07b7c1492"
+
 nice-try@^1.0.4:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-1.0.5.tgz#a3378a7696ce7d223e88fc9b764bd7ef1089e366"
@@ -5525,9 +5525,9 @@ verror@1.10.0:
   version "0.24.5"
   resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.slider-layout@0.24.5/public/@types/vtex.slider-layout#0fb89e3cbedc8bdf33d66ccb41e0752cc349249e"
 
-"vtex.styleguide@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.146.9/public/@types/vtex.styleguide":
-  version "9.146.9"
-  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.146.9/public/@types/vtex.styleguide#d1601fedfb665c6173334753171717da64e670bc"
+"vtex.styleguide@http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.146.13/public/@types/vtex.styleguide":
+  version "9.146.13"
+  resolved "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.styleguide@9.146.13/public/@types/vtex.styleguide#f4ccbc54621bf5114ddd115b6032ae320f2eba55"
 
 w3c-hr-time@^1.0.1:
   version "1.0.2"
