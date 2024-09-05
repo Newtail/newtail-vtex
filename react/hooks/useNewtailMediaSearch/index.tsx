@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, {
   createContext,
   useCallback,
@@ -7,6 +8,7 @@ import React, {
   useState,
 } from 'react'
 import { useIntl } from 'react-intl'
+import { useRuntime } from 'vtex.render-runtime'
 
 import { getNewtailMedia } from '../../services'
 import { useSearchPageContext } from '../useSearchPageContext'
@@ -25,7 +27,9 @@ const NewtailMediaSearchContext =
 const NewtailMediaSearchProvider: React.FC<NewtailMediaSearchProviderProps> = ({
   children,
   onlyFirstSKU = false,
+  onlyFirstSKUAdmin = false,
   parentSearchSelector,
+  parentSearchSelectorAdmin,
   placementName,
   placementNameAdmin,
   tagClassname,
@@ -40,7 +44,9 @@ const NewtailMediaSearchProvider: React.FC<NewtailMediaSearchProviderProps> = ({
   // do not use if using infinite scrolling
   sponsoredSkusAtTop = true,
 }) => {
-  // console.log('🔵 🟡 🔵 🟡 Carregou Newtail Media Search 🔵 🟡 🔵 🟡')
+  const { query: queryRaw } = useRuntime()
+
+  const debug = useMemo(() => queryRaw?.debug ?? null, [queryRaw])
 
   /**
    * Handle settings
@@ -55,11 +61,17 @@ const NewtailMediaSearchProvider: React.FC<NewtailMediaSearchProviderProps> = ({
   })
 
   const publisherId = window?.newtailMedia?.publisherId
-  const placement = placementNameAdmin || placementName || 'search'
-  const parentSelector = parentSearchSelector ?? D.searchSelectorDefault
+  const placement =
+    placementNameAdmin || placementName || `placement_search_default`
+
+  const parentSelector =
+    parentSearchSelectorAdmin || parentSearchSelector || D.searchSelectorDefault
+
   const HTMLElementTag = 'small'
   const tagPositionElement: TagPosition =
     tagPositionAdmin || tagPosition || 'start'
+
+  const onlyFirstSKUInner = onlyFirstSKUAdmin || onlyFirstSKU || false
 
   const classNameTag =
     tagClassnameAdmin || tagClassname || D.tagClassnameDefault
@@ -83,8 +95,8 @@ const NewtailMediaSearchProvider: React.FC<NewtailMediaSearchProviderProps> = ({
   const { products } = useSearchPageContext()
 
   const skus = useMemo(
-    () => extractSKUs({ products, onlyFirstSKU }),
-    [onlyFirstSKU, products]
+    () => extractSKUs({ products, onlyFirstSKU: onlyFirstSKUInner }),
+    [onlyFirstSKUInner, products]
   )
 
   /**
@@ -97,10 +109,28 @@ const NewtailMediaSearchProvider: React.FC<NewtailMediaSearchProviderProps> = ({
     if (!requestBody) return
 
     try {
-      const { data } = await getNewtailMedia({
+      const body = {
         publisherId,
         body: requestBody,
-      })
+      }
+
+      if (debug === 'newtail') {
+        console.log(
+          `%c 🚧 🚧 🚧 🚀 NewtailMediaSearchProvider :: Request :: ${placement}`,
+          'color:white;background:#3c3584;',
+          body
+        )
+      }
+
+      const { data } = await getNewtailMedia(body)
+
+      if (debug === 'newtail') {
+        console.log(
+          `% c 🚧 🚧 🚧 🚀 NewtailMediaSearchProvider :: Response :: ${placement}`,
+          'color:white;background:#3c3584;',
+          data
+        )
+      }
 
       const response = data?.[placement] as ProductAd[]
 
@@ -113,7 +143,7 @@ const NewtailMediaSearchProvider: React.FC<NewtailMediaSearchProviderProps> = ({
     } catch (error) {
       console.error(error)
     }
-  }, [placement, publisherId, requestBody])
+  }, [debug, placement, publisherId, requestBody])
 
   useEffect(() => {
     if (products?.length && requestBody) {
@@ -147,16 +177,30 @@ const NewtailMediaSearchProvider: React.FC<NewtailMediaSearchProviderProps> = ({
 
       if (!searchResultItem) return
 
-      const itemElements = container.querySelectorAll(
-        `a[href*='${searchResultItem.link}']`
-      )
+      const getItemElements = () => {
+        const byLink = container.querySelectorAll(
+          `a[href*='${searchResultItem.link}']`
+        )
+
+        if (byLink.length) {
+          return byLink
+        }
+
+        const byLinkText = container.querySelectorAll(
+          `a[href*='${searchResultItem.linkText}']`
+        )
+
+        return byLinkText
+      }
+
+      const itemElements = getItemElements()
 
       itemElements.forEach((element) => {
         if (sponsoredSkusAtTop) {
           // handle product summary container
           // div.vtex-search-result-3-x-galleryItem > section.vtex-product-summary-2-x-container
           const sectionParent = element?.parentElement
-          
+
           const containerParent = sectionParent?.parentElement
 
           if (containerParent) {

@@ -2,6 +2,20 @@
 
 ## [Unreleased]
 
+## [2.0.16] - 2024-08-29
+- Remove all default values
+
+## [2.0.15] - 2024-08-29
+- Add new props on newtail media search
+- Debug mode improvements
+
+## [2.0.14] - 2024-08-29
+- Debug mode improvements
+
+## [2.0.13] - 2024-08-29
+- Add debug mode
+- Remove default vale for desktop size banner
+
 ## [2.0.12] - 2024-08-23
 
 ## [2.0.11] - 2024-08-21
@@ -15,7 +29,6 @@
 - Home context with category home when banner ads
 - Ad size for mobile
 - Declare category name for without context page
-
 
 ## [2.0.8] - 2024-08-05
 - Home context

@@ -62,10 +62,10 @@
         "tablet": 1,
         "phone": 1
       },
+      "blockClass": "shelf",
       "navigationStep": 1,
       "infinite": true,
       "fullWidth": false,
-      "blockClass": "shelf",
       "showNavigationArrows": "desktopOnly",
       "showPaginationDots": "mobileOnly"
     }
@@ -83,10 +83,10 @@
         "tablet": 1,
         "phone": 1
       },
+      "blockClass": "shelf",
       "navigationStep": 1,
       "infinite": true,
       "fullWidth": false,
-      "blockClass": "shelf",
       "showNavigationArrows": "desktopOnly",
       "showPaginationDots": "mobileOnly"
     }

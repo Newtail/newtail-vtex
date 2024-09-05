@@ -1,14 +1,29 @@
 /* eslint-disable no-console */
 import type { PropsWithChildren } from 'react'
-import React from 'react'
+import React, { useMemo } from 'react'
 import { defineMessages } from 'react-intl'
+import { useRuntime } from 'vtex.render-runtime'
 
 import Search from './components/Search'
 import { NewtailMediaSearchProvider } from './hooks/useNewtailMediaSearch'
 import * as D from './settings'
 
 function NewtailMediaSearch(props: PropsWithChildren<NewtailMediaSearchProps>) {
-  // console.log('🔵 🟡 🔎📚 Carregou Newtail Media :: Search 🔎📚 🔵 🟡')
+  const { query: queryRaw } = useRuntime()
+
+  const debug = useMemo(() => queryRaw?.debug ?? null, [queryRaw])
+
+  if (debug === 'newtail') {
+    console.log(
+      '%c 🚧 🚧 🚧 🚧 🔎 📚 NewtailMedia :: Search 📚 🔎 🚧 🚧 🚧 🚧',
+      'color:#ffb450;background:#3c3584;'
+    )
+    console.log(
+      '%c 🚀 ~ NewtailMediaSearch ~ props:',
+      'color:white;background:#3c3584;',
+      props
+    )
+  }
 
   return (
     <NewtailMediaSearchProvider {...props}>

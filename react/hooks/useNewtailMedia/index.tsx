@@ -8,6 +8,7 @@ import React, {
   useMemo,
 } from 'react'
 import { useRenderSession } from 'vtex.session-client'
+import { useRuntime } from 'vtex.render-runtime'
 
 import { getNewtailMedia, postNewtailMediaConversionURL } from '../../services'
 import type { SessionSuccess } from '../../typings/vtex.session-client'
@@ -38,13 +39,21 @@ const NewtailMediaProvider: React.FC<NewtailMediaProviderType> = ({
   categoryName: categoryNameProps,
   categoryNameAdmin,
 }) => {
+  const { query: queryRaw } = useRuntime()
+
+  const debug = useMemo(() => queryRaw?.debug ?? null, [queryRaw])
+
   const publisherId = window?.newtailMedia?.publisherId
 
-  const placement = placementNameAdmin || placementName || adType || 'placement'
-  const mediaSize = sizeAdmin || size || 'desktop'
-  const categoryName = categoryNameAdmin || categoryNameProps
+  const placement =
+    placementNameAdmin || placementName || `placement_${adType}_default`
+
+  const mediaSize = sizeAdmin || size
   const mobileMediaSize = sizeMobileAdmin || sizeMobile
-  const quantityAds = Number(quantityAdmin) || quantity || 1
+  const categoryName = categoryNameAdmin || categoryNameProps
+
+  const defaultQuantity = adType === 'banner' ? 1 : 20
+  const quantityAds = Number(quantityAdmin) || quantity || defaultQuantity
 
   const [loading, setLoading] = useState(true)
 
@@ -115,10 +124,28 @@ const NewtailMediaProvider: React.FC<NewtailMediaProviderType> = ({
 
       if (!requestBody) return
 
-      const { data } = await getNewtailMedia({
+      const body = {
         publisherId,
         body: requestBody,
-      })
+      }
+
+      if (debug === 'newtail') {
+        console.log(
+          `%c 🚧 🚧 🚧 🚀 NewtailMediaProvider :: Request :: ${placement}`,
+          'color:#ffb450;background:#3c3584;',
+          body
+        )
+      }
+
+      const { data } = await getNewtailMedia(body)
+
+      if (debug === 'newtail') {
+        console.log(
+          `%c 🚧 🚧 🚧 🚀 NewtailMediaProvider :: Response :: ${placement}`,
+          'color:#ffb450;background:#3c3584;',
+          data
+        )
+      }
 
       handleResponse(data)
     } catch (error) {
@@ -126,7 +153,15 @@ const NewtailMediaProvider: React.FC<NewtailMediaProviderType> = ({
     } finally {
       setLoading(false)
     }
-  }, [adType, handleResponse, publisherId, requestBody, sessionId])
+  }, [
+    adType,
+    debug,
+    handleResponse,
+    placement,
+    publisherId,
+    requestBody,
+    sessionId,
+  ])
 
   useEffect(() => {
     if (adType !== 'conversion') {

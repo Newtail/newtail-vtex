@@ -4,7 +4,6 @@
       "type": "object",
       "properties": {
         "quantityAdmin": {
-          "default": 20,
           "title": "admin/newtailpartnerbr-newtail-media.common.quantityAdmin.title",
           "type": "string"
         },
@@ -18,7 +17,6 @@
           "type": "string"
         },
         "tagClassnameAdmin": {
-          "default": "newtail-sponsored-tag",
           "title": "admin/newtailpartnerbr-newtail-media.search.tagClassname.title",
           "description": "admin/newtailpartnerbr-newtail-media.search.tagClassname.description",
           "type": "string"
@@ -34,18 +32,16 @@
           "type": "string",
           "widget": {
             "ui:widget": "radio"
-          },
-          "parentSearchSelectorAdmin": {
-            "default": ".vtex-search-result-3-x-searchResultContainer #gallery-layout-container",
-            "title": "admin/newtailpartnerbr-newtail-media.search.parentSearchSelector.title",
-            "description": "admin/newtailpartnerbr-newtail-media.search.parentSearchSelector.description",
-            "type": "string"
-          },
-          "onlyFirstSKUAdmin": {
-            "default": false,
-            "title": "admin/newtailpartnerbr-newtail-media.search.onlyFirstSKU.title",
-            "type": "boolean"
           }
+        },
+        "parentSearchSelectorAdmin": {
+          "title": "admin/newtailpartnerbr-newtail-media.search.parentSearchSelector.title",
+          "description": "admin/newtailpartnerbr-newtail-media.search.parentSearchSelector.description",
+          "type": "string"
+        },
+        "onlyFirstSKUAdmin": {
+          "title": "admin/newtailpartnerbr-newtail-media.search.onlyFirstSKU.title",
+          "type": "boolean"
         }
       }
     },
@@ -53,29 +49,24 @@
       "type": "object",
       "properties": {
         "placementNameAdmin": {
-          "default": "banner",
           "title": "admin/newtailpartnerbr-newtail-media.common.placementNameAdmin.title",
           "type": "string"
         },
         "sizeAdmin": {
-          "default": "desktop",
           "title": "admin/newtailpartnerbr-newtail-media.banner.sizeAdmin.title",
           "description": "admin/newtailpartnerbr-newtail-media.banner.sizeAdmin.description",
           "type": "string"
         },
         "sizeMobileAdmin": {
-          "default": null,
           "title": "admin/newtailpartnerbr-newtail-media.banner.sizeMobileAdmin.title",
           "description": "admin/newtailpartnerbr-newtail-media.banner.sizeMobileAdmin.description",
           "type": "string"
         },
         "quantityAdmin": {
-          "default": 1,
           "title": "admin/newtailpartnerbr-newtail-media.common.quantityAdmin.title",
           "type": "string"
         },
         "categoryNameAdmin": {
-          "default": null,
           "title": "admin/newtailpartnerbr-newtail-media.common.categoryNameAdmin.title",
           "description": "admin/newtailpartnerbr-newtail-media.common.categoryNameAdmin.description",
           "type": "string"
@@ -86,17 +77,14 @@
       "type": "object",
       "properties": {
         "placementNameAdmin": {
-          "default": "products",
           "title": "admin/newtailpartnerbr-newtail-media.common.placementNameAdmin.title",
           "type": "string"
         },
         "quantityAdmin": {
-          "default": 20,
           "title": "admin/newtailpartnerbr-newtail-media.common.quantityAdmin.title",
           "type": "string"
         },
         "categoryNameAdmin": {
-          "default": null,
           "title": "admin/newtailpartnerbr-newtail-media.common.categoryNameAdmin.title",
           "description": "admin/newtailpartnerbr-newtail-media.common.categoryNameAdmin.description",
           "type": "string"

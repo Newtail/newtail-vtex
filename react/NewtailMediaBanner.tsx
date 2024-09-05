@@ -1,13 +1,28 @@
 /* eslint-disable no-console */
 import type { PropsWithChildren } from 'react'
-import React from 'react'
+import React, { useMemo } from 'react'
 import { defineMessages } from 'react-intl'
+import { useRuntime } from 'vtex.render-runtime'
 
 import { NewtailMediaProvider } from './hooks/useNewtailMedia'
 import Banner from './components/Banner'
 
 function NewtailMediaBanner(props: PropsWithChildren<NewtailMediaBannerProps>) {
-  // console.log('🔵 🟡 🔵 🟡 Carregou Newtail Media :: Banner 🔵 🟡 🔵 🟡')
+  const { query: queryRaw } = useRuntime()
+
+  const debug = useMemo(() => queryRaw?.debug ?? null, [queryRaw])
+
+  if (debug === 'newtail') {
+    console.log(
+      '%c 🚧 🚧 🚧 🚧  NewtailMedia :: Banner 🚧 🚧 🚧 🚧',
+      'color:#ffb450;background:#3c3584;'
+    )
+    console.log(
+      '%c 🚀 ~ NewtailMediaBanner ~ props:',
+      'color:white;background:#3c3584;',
+      props
+    )
+  }
 
   return (
     <NewtailMediaProvider adType="banner" {...props}>

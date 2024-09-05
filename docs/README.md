@@ -1,34 +1,8 @@
-📢 Use this project, [contribute](https://github.com/{OrganizationName}/{AppName}) to it or open issues to help evolve it using [Store Discussion](https://github.com/vtex-apps/store-discussion).
+# Newtail Media APP VTEX
 
-# Newtail Media Vtex
+The installation involves the following steps:
 
-<!-- DOCS-IGNORE:start -->
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-0-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
-<!-- DOCS-IGNORE:end -->
-
-[pt] O aplicativo Newtail Media tem a finalidade de fornecer componentes para implementar Retail Media em uma loja Vtex.      
-
-[en] The Newtail Media app provides components to implement Retail Media in a Vtex store.      
-
-[es] La aplicación Newtail Media proporciona componentes para implementar Retail Media en una tienda Vtex.
-
-
-## Implementação completa do fluxo de Retail media
---- 
-
-[pt] Para mais detalhes sobre a implementação no tema, acesse: [a documentação](https://newtail-media.readme.io/reference/vtex)      
-
-[en] For more details on the implementation, visit: [the documentation](https://newtail-media.readme.io/reference/vtex)    
-
-[es] Para más detalles sobre la implementación, visite: [la documentación](https://newtail-media.readme.io/reference/vtex)
-
-## Configuration 
-
-A configuração tem alguns passos:
-
-**Step 1** - Adding the app as a theme dependency in the `manifest.json` file;
+**1** - Add the app as a theme dependency in the `manifest.json` file.
 
 ```json
   {
@@ -38,105 +12,107 @@ A configuração tem alguns passos:
   }
 ```
 
-**Step 2** - Adding publisher id on app config in the VTEX admin.
+**2** - Add the publisher ID in the app configuration in the VTEX admin.
 
-**Step 3** - Declaring the app's blocks in a given theme template or inside another block from the theme.
+**3** - Declare the app's blocks in the theme.
 
-## Blocks
----
+## Development Mode
 
-| Block name                   | Description      
-| ---------------------------- | ---------------------------------------------------------------------------------------------------------------- | 
-| `newtail-media-search`       | Componente para tratar os resultados da busca. Adiciona um selo patrocinados nos produtos patrocinado e pode reodenar os resultados.
-| `newtail-media-banner`       | Componente para renderizar banners patrocinados de acordo com o contexto da página.
-| `newtail-media-shelf`        | Componente para renderizar uma carrossel de produtos patrocinados de acordo com o contexto da página.
-| `newtail-media-conversion`   | Componente para tratar os eventos de conversão.
+> 🚧 `vtex workspace use newtail`
 
+All implementation will be done in the development environment. We will use the newtail workspace. After validation, we will publish it in the store's master environment.
 
-## Blocks props
----
+## Available Components
 
-As propriedades dos blocos podem ser definidas pelo site-editor ou diretamente pelo bloco. A prioridade será para os dados inseridos no site-editor.
+1. `newtail-media-banner`  
+   This component is responsible for requesting, displaying, and managing events related to banner-type ads. It will display a banner in the designated location.
+2. `newtail-media-shelf`  
+   This component is responsible for requesting, displaying, and managing events related to product-type ads. It will create a product carousel in the designated location using native VTEX components.
+3. `newtail-media-search`  
+   This component is responsible for managing sponsored search results.
+4. `newtail-media-conversion`  
+   This component is responsible for managing conversion events.
 
-### `newtail-media-search`
-#### props block `isLayout: true`
-Propriedades disponibilizadas apenas na definição do bloco.
+| For more information, visit the components page. There you can find specific documentation for each component and the properties they receive through block properties or via site editor.
 
-| Prop name                    | Type           | Default value          | Description      
-| ---------------------------- | -------------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------- | 
-| `quantity`                   | `number`       | `20`                   | Quantidade de anúncios solicitados.         
-| `placementName`              | `string`       | `search`               | Nome do placement usado na consulta.         
-| `tagText`                    | `string`       | `Patrocinado`          | Texto que será usado na tag. Por padrão, será patrocinado com tradução automática.         
-| `tagClassname`               | `string`       | `newtail-sponsored-tag`| Classe que será adicionada ao elemento HTML da tag.         
-| `tagPosition`                | `[start,end]`  | `start`                | Indica se a tag estará no começo ou no final do card de produto.         
-| `parentSearchSelector`       | `string`       | `in /settings`         | Indica o container que envolve o resultado da busca. Usamos o padrão do _store-theme_.         
-| `onlyFirstSKU`               | `boolean`      | `false`                | Indica se devemos olhar apenas o SKU principal ou todos SKUs atrelados.
-| `sponsoredSkusAtTop`         | `boolean`      | `true`                 | Indica se devemos reordenar o resultado de busca. Essa opção não deve ser usada com rolagem infinita.         
+## Displaying Ads
 
-#### props admin
-Propriedades disponibilizadas no site editor.
+We must add the corresponding components to the pages that will display the ads and make the necessary visual adjustments.
 
-| Prop name                    | Type           | Default value          | Description      
-| ---------------------------- | -------------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------- | 
-| `quantityAdmin`              | `number`       | `20`                   | Quantidade de anúncios solicitados.         
-| `placementNameAdmin`         | `string`       | `search`               | Nome do placement usado na consulta.         
-| `tagTextAdmin`               | `string`       | `Patrocinado`          | Texto que será usado na tag. Por padrão, será patrocinado com tradução automática.         
-| `tagClassnameAdmin`          | `string`       | `newtail-sponsored-tag`| Classe que será adicionada ao elemento HTML da tag.         
-| `tagPositionAdmin`           | `[start,end]`  | `start`                | Indica se a tag estará no começo ou no final do card de produto.         
-| `parentSearchSelectorAdmin`  | `string`       | `in /settings`         | Indica o container que envolve o resultado da busca. Usamos o padrão do _store-theme_.         
-| `onlyFirstSKUAdmin`          | `boolean`      | `false`                | Indica se devemos olhar apenas o SKU principal ou todos SKUs atrelados.
+> It is essential to have at least a basic understanding of VTEX block declaration.
 
-### `newtail-media-banner`
-#### props block `isLayout: true`
-Propriedades disponibilizadas apenas na definição do bloco.
+**📘 Implementation**  
+Below, we will use the search page as an example.  
+`store/blocks/search/`  
 
-| Prop name                    | Type           | Default value          | Description      
-| ---------------------------- | -------------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------- | 
-| `quantity`                   | `number`       | `1`                    | Quantidade de anúncios solicitados.         
-| `placementName`              | `string`       | `banner`               | Nome do placement usado na consulta.         
-| `size`                       | `string`       | `desktop`              | Tamanho da imagem que deverá ser soliticado. Mesmo valor cadastrado na plataforma de retail media.
+> The file name may vary depending on the theme if it has been customized.
 
-#### props admin
-Propriedades disponibilizadas no site editor.
+1. Add ad display components.
 
-| Prop name                    | Type           | Default value          | Description      
-| ---------------------------- | -------------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------- | 
-| `quantityAdmin`              | `number`       | `1`                    | Quantidade de anúncios solicitados.         
-| `placementNameAdmin`         | `string`       | `banner`               | Nome do placement usado na consulta.         
-| `sizeAdmin`                  | `string`       | `desktop`              | Tamanho da imagem que deverá ser soliticado. Mesmo valor cadastrado na plataforma de retail media.
+```json
+{
+  "newtail-media-search": {
+    "props": {
+      "placementName": "nome_do_placement"
+    }
+  },
+  "newtail-media-banner": {
+    "title": "Newtail Banner - search_header",
+    "props": {
+      "placementName": "search_header",
+      "size": "leaderboard",
+      "sizeMobile": "large_rectangle",
+    }
+  },
+  "store.search": {
+    "blocks": [
+      "newtail-media-banner",
+      "newtail-media-shelf",
+      "search-result-layout"
+    ],
+  },
+	// ...
+  "search-result-layout.desktop": {
+    "children": [
+      "newtail-media-search",
+      "others-children"
+    ],
+  },
+}
+```
 
-### `newtail-media-shelf`
-#### props block `isLayout: true`
-Propriedades disponibilizadas apenas na definição do bloco.
+2. If there are variations in components to handle responsiveness, follow the same procedure.
 
-| Prop name                    | Type           | Default value          | Description      
-| ---------------------------- | -------------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------- | 
-| `quantity`                   | `number`       | `20`                    | Quantidade de anúncios solicitados.         
-| `placementName`              | `string`       | `products`             | Nome do placement usado na consulta.         
+```json
+{
+  "my-mobile-search-component": {
+    "props": {},
+    "children": [
+      "newtail-media-banner",
+      "newtail-media-shelf",
+      "another-children"
+    ]
+  }
+}
+```
 
-#### props admin
-Propriedades disponibilizadas no site editor.
+## Notifying Conversion
 
-| Prop name                    | Type           | Default value          | Description      
-| ---------------------------- | -------------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------- | 
-| `quantityAdmin`              | `number`       | `20`                   | Quantidade de anúncios solicitados.         
-| `placementNameAdmin`         | `string`       | `products`             | Nome do placement usado na consulta.         
+**📘 Implementation**  
 
+We will also need to add a component to the `OrderPlaced` page to track conversion events.
 
-<!-- DOCS-IGNORE:start -->
+1. Add the `newtail-media-conversion` to the configuration file of the Order Placed page `store/blocks/orderplaced.jsonc`.
 
-## Contributors ✨
+> The file name may vary depending on the theme if it has been customized.
 
-Thanks goes to these wonderful people:
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<!-- markdownlint-enable -->
-<!-- prettier-ignore-end -->
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind are welcome!
-
-<!-- DOCS-IGNORE:end -->
-
+```json
+{
+  "store.orderplaced": {
+    "blocks": [
+      "order-placed",
+      "newtail-media-conversion"
+    ]
+  }
+}
+```
