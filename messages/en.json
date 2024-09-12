@@ -1,33 +1,34 @@
 {
-  "admin/newtailpartnerbr-newtail-media.common.placementNameAdmin.title": "Placement name",
-  "admin/newtailpartnerbr-newtail-media.common.quantityAdmin.title": "Quantity of ads",
-  "admin/newtailpartnerbr-newtail-media.common.categoryNameAdmin.title": "Category (Advanced)",
-  "admin/newtailpartnerbr-newtail-media.common.categoryNameAdmin.description": "Use in fields on pages that don't have context and need to force some category for the banner or in specific cases.",
+  "admin/newtailpartnerbr-newtail-media.common.active.title": "Active",
+  "admin/newtailpartnerbr-newtail-media.common.placementNameAdmin.title": "Placement Name",
+  "admin/newtailpartnerbr-newtail-media.common.quantityAdmin.title": "Quantity of Ads",
+  "admin/newtailpartnerbr-newtail-media.common.quantityAdmin.banner.description": "Enter a value greater than or equal to 1. By default, 1 ad will be requested. To disable a placement, use the 'Active' property.",
+  "admin/newtailpartnerbr-newtail-media.common.quantityAdmin.product.description": "Enter a value greater than or equal to 1. By default, 20 ads will be requested. To disable a placement, use the 'Active' property.",
+  "admin/newtailpartnerbr-newtail-media.common.categoryNameAdmin.title": "Category (optional)",
+  "admin/newtailpartnerbr-newtail-media.common.categoryNameAdmin.description": "[Advanced] Use this field on pages without context where a category needs to be forced for the banner or in specific cases.",
 
   "admin/newtailpartnerbr-newtail-media.shelf.title": "Newtail Media - Shelf",
+  "admin/newtailpartnerbr-newtail-media.shelf.placementNameAdmin.description": "By default, 'placement_product_default' will be used. Prefer the name registered in the ad platform.",
 
   "admin/newtailpartnerbr-newtail-media.banner.title": "Newtail Media - Banner",
-  "admin/newtailpartnerbr-newtail-media.banner.sizeAdmin.title": "Media Size (desktop)",
-  "admin/newtailpartnerbr-newtail-media.banner.sizeAdmin.description": "Use the same size registered on the ad platform.",
+  "admin/newtailpartnerbr-newtail-media.banner.placementNameAdmin.description": "By default, 'placement_banner_default' will be used. Prefer the name registered in the ad platform.",
+  "admin/newtailpartnerbr-newtail-media.banner.sizeAdmin.title": "Desktop Media Size",
+  "admin/newtailpartnerbr-newtail-media.banner.sizeAdmin.description": "Use the same size registered in the ad platform. By default, the value 'banner' will be used.",
   "admin/newtailpartnerbr-newtail-media.banner.sizeMobileAdmin.title": "Mobile Media Size (optional)",
-  "admin/newtailpartnerbr-newtail-media.banner.sizeMobileAdmin.description": "Use the same size registered on the ad platform. If not passed, the desktop media size value will be used.",
+  "admin/newtailpartnerbr-newtail-media.banner.sizeMobileAdmin.description": "Use the same size registered in the ad platform. If not provided, the 'Desktop Media Size' value will be used.",
 
   "admin/newtailpartnerbr-newtail-media.search.title": "Newtail Media - Search",
-
-  "admin/newtailpartnerbr-newtail-media.search.tagPosition.title": "Tag position",
-  "admin/newtailpartnerbr-newtail-media.search.tagPosition.description": "Choose where the tag will be displayed in the product card.",
+  "admin/newtailpartnerbr-newtail-media.search.placementNameAdmin.description": "By default, 'placement_search_default' will be used. Prefer the name registered in the ad platform.",
+  "admin/newtailpartnerbr-newtail-media.search.tagPosition.title": "Tag Position",
+  "admin/newtailpartnerbr-newtail-media.search.tagPosition.description": "Indicate where the tag should be displayed within the product card",
   "admin/newtailpartnerbr-newtail-media.search.tagPosition.start": "Start",
   "admin/newtailpartnerbr-newtail-media.search.tagPosition.end": "End",
-
   "admin/newtailpartnerbr-newtail-media.search.tagText.default": "Sponsored",
-  "admin/newtailpartnerbr-newtail-media.search.tagText.title": "Sponsored tag text",
-  "admin/newtailpartnerbr-newtail-media.search.tagText.description": "By default, 'sponsored' will be used with automatic translation. To override, fill in this field.",
-
+  "admin/newtailpartnerbr-newtail-media.search.tagText.title": "Sponsored Tag Text",
+  "admin/newtailpartnerbr-newtail-media.search.tagText.description": "By default, 'sponsored' will be used with automatic translation. To replace it, fill in this field.",
   "admin/newtailpartnerbr-newtail-media.search.tagClassname.title": "Tag Class",
   "admin/newtailpartnerbr-newtail-media.search.tagClassname.description": "By default, '.newtail-sponsored-tag' will be used.",
-
-  "admin/newtailpartnerbr-newtail-media.search.parentSearchSelector.title": "[Advanced] HTML Element for Tag Insertion",
-  "admin/newtailpartnerbr-newtail-media.search.parentSearchSelector.description": "This field should be edited by developers only. By default, '.vtex-search-result-3-x-searchResultContainer #gallery-layout-container' will be used.",
-
-  "admin/newtailpartnerbr-newtail-media.search.onlyFirstSKU.title": "Use only first SKU. If checked, only the first SKU of the product will be used to search for the product in Newtail. If unchecked, all SKUs of the product will be used to search for the product in Newtail."
+  "admin/newtailpartnerbr-newtail-media.search.parentSearchSelector.title": "HTML Element for Tag Insertion",
+  "admin/newtailpartnerbr-newtail-media.search.parentSearchSelector.description": "[Advanced] This field should only be edited by developers. By default, '.vtex-search-result-3-x-searchResultContainer #gallery-layout-container' will be used.",
+  "admin/newtailpartnerbr-newtail-media.search.onlyFirstSKU.title": "Use only the first SKU. If checked, only the first SKU of the product will be used for search in Newtail. If unchecked, all SKUs of the product will be used for search in Newtail."
 }

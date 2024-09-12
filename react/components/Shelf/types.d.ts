@@ -1,4 +1,5 @@
 type NewtailMediaShelfProps = {
+  active?: boolean
   placementName?: string
   placementNameAdmin?: string
   quantity?: number

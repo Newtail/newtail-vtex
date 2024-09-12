@@ -24,6 +24,8 @@ function NewtailMediaShelf(props: PropsWithChildren<NewtailMediaShelfProps>) {
     )
   }
 
+  if (!props?.active) return <></>
+
   return (
     <NewtailMediaProvider adType="product" {...props}>
       <Shelf />
@@ -36,12 +38,24 @@ const messages = defineMessages({
     id: 'admin/newtailpartnerbr-newtail-media.shelf.title',
     defaultMessage: '',
   },
+  'common.active.title': {
+    id: 'admin/newtailpartnerbr-newtail-media.common.active.title',
+    defaultMessage: '',
+  },
   'common.placementNameAdmin.title': {
     id: 'admin/newtailpartnerbr-newtail-media.common.placementNameAdmin.title',
     defaultMessage: '',
   },
+  'shelf.placementNameAdmin.description': {
+    id: 'admin/newtailpartnerbr-newtail-media.shelf.placementNameAdmin.description',
+    defaultMessage: '',
+  },
   'common.quantityAdmin.title': {
     id: 'admin/newtailpartnerbr-newtail-media.common.quantityAdmin.title',
+    defaultMessage: '',
+  },
+  'common.quantityAdmin.product.description': {
+    id: 'admin/newtailpartnerbr-newtail-media.common.quantityAdmin.product.description',
     defaultMessage: '',
   },
   'common.categoryNameAdmin.title': {

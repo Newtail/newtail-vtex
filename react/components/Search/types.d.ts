@@ -1,4 +1,6 @@
 type NewtailMediaSearchProps = {
+  active?: boolean
+
   onlyFirstSKU?: boolean
   onlyFirstSKUAdmin?: boolean
 

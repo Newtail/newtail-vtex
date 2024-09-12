@@ -126,7 +126,7 @@ const NewtailMediaSearchProvider: React.FC<NewtailMediaSearchProviderProps> = ({
 
       if (debug === 'newtail') {
         console.log(
-          `% c 🚧 🚧 🚧 🚀 NewtailMediaSearchProvider :: Response :: ${placement}`,
+          `%c 🚧 🚧 🚧 🚀 NewtailMediaSearchProvider :: Response :: ${placement}`,
           'color:white;background:#3c3584;',
           data
         )

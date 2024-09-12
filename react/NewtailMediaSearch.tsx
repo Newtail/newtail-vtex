@@ -25,6 +25,8 @@ function NewtailMediaSearch(props: PropsWithChildren<NewtailMediaSearchProps>) {
     )
   }
 
+  if (!props?.active) return <></>
+
   return (
     <NewtailMediaSearchProvider {...props}>
       <Search />
@@ -37,12 +39,24 @@ const messages = defineMessages({
     id: 'admin/newtailpartnerbr-newtail-media.search.title',
     defaultMessage: '',
   },
+  'common.active.title': {
+    id: 'admin/newtailpartnerbr-newtail-media.common.active.title',
+    defaultMessage: '',
+  },
   'common.quantityAdmin.title': {
     id: 'admin/newtailpartnerbr-newtail-media.common.quantityAdmin.title',
     defaultMessage: '',
   },
+  'common.quantityAdmin.product.description': {
+    id: 'admin/newtailpartnerbr-newtail-media.common.quantityAdmin.product.description',
+    defaultMessage: '',
+  },
   'common.placementNameAdmin.title': {
     id: 'admin/newtailpartnerbr-newtail-media.common.placementNameAdmin.title',
+    defaultMessage: '',
+  },
+  'search.placementNameAdmin.description': {
+    id: 'admin/newtailpartnerbr-newtail-media.search.placementNameAdmin.description',
     defaultMessage: '',
   },
   'search.tagText.title': {

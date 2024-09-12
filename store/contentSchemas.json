@@ -3,12 +3,19 @@
     "NewtailMediaSearch": {
       "type": "object",
       "properties": {
+        "active": {
+          "title": "admin/newtailpartnerbr-newtail-media.common.active.title",
+          "type": "boolean",
+          "default": true
+        },
         "quantityAdmin": {
           "title": "admin/newtailpartnerbr-newtail-media.common.quantityAdmin.title",
+          "description": "admin/newtailpartnerbr-newtail-media.common.quantityAdmin.product.description",
           "type": "string"
         },
         "placementNameAdmin": {
           "title": "admin/newtailpartnerbr-newtail-media.common.placementNameAdmin.title",
+          "description": "admin/newtailpartnerbr-newtail-media.search.placementNameAdmin.description",
           "type": "string"
         },
         "tagTextAdmin": {
@@ -48,8 +55,14 @@
     "NewtailMediaBanner": {
       "type": "object",
       "properties": {
+        "active": {
+          "title": "admin/newtailpartnerbr-newtail-media.common.active.title",
+          "type": "boolean",
+          "default": true
+        },
         "placementNameAdmin": {
           "title": "admin/newtailpartnerbr-newtail-media.common.placementNameAdmin.title",
+          "description": "admin/newtailpartnerbr-newtail-media.banner.placementNameAdmin.description",
           "type": "string"
         },
         "sizeAdmin": {
@@ -64,6 +77,7 @@
         },
         "quantityAdmin": {
           "title": "admin/newtailpartnerbr-newtail-media.common.quantityAdmin.title",
+          "description": "admin/newtailpartnerbr-newtail-media.common.quantityAdmin.banner.description",
           "type": "string"
         },
         "categoryNameAdmin": {
@@ -76,12 +90,19 @@
     "NewtailMediaShelf": {
       "type": "object",
       "properties": {
+        "active": {
+          "title": "admin/newtailpartnerbr-newtail-media.common.active.title",
+          "type": "boolean",
+          "default": true
+        },
         "placementNameAdmin": {
           "title": "admin/newtailpartnerbr-newtail-media.common.placementNameAdmin.title",
+          "description": "admin/newtailpartnerbr-newtail-media.shelf.placementNameAdmin.description",
           "type": "string"
         },
         "quantityAdmin": {
           "title": "admin/newtailpartnerbr-newtail-media.common.quantityAdmin.title",
+          "description": "admin/newtailpartnerbr-newtail-media.common.quantityAdmin.product.description",
           "type": "string"
         },
         "categoryNameAdmin": {

@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { useMemo } from 'react'
 import { useRuntime } from 'vtex.render-runtime'
 
@@ -12,14 +13,19 @@ const AdContextKeys = {
 export const usePageContext = () => {
   const { query: queryRaw, route } = useRuntime()
 
+  const debug = useMemo(() => queryRaw?.debug ?? null, [queryRaw])
+
   const term = useMemo(() => queryRaw?._q ?? null, [queryRaw])
 
   const type = route?.pageContext?.type as PageDataContextType
   const pageContextId = route?.pageContext?.id as string
   const productSKU = route?.queryString?.skuId as string
+  const queryStringMap = route?.queryString?.map as string
 
   const context = useMemo(() => {
     const isHome = pageContextId === 'store.home'
+    const isSearch = pageContextId === 'search'
+    const isCategorySearch = isSearch && queryStringMap === 'category-1'
 
     switch (type) {
       case 'brand':
@@ -36,18 +42,69 @@ export const usePageContext = () => {
 
       default:
         if (isHome) return AdContextKeys.home
+        if (isCategorySearch) return AdContextKeys.category
 
         return type in AdContextKeys
           ? (type as AdContext)
           : AdContextKeys.search
     }
-  }, [pageContextId, term, type])
+  }, [pageContextId, queryStringMap, term, type])
 
   const categoryName = useMemo(() => {
-    const categoryRaw = route?.params?.category || route.params?.department
+    const departmentRaw = route.params?.department || route.params?.term
+    const categoryRaw = route?.params?.category
+    const subcategoryRaw = route?.params?.subcategory
+    const isMissingCategory =
+      !route?.params?.subcategory && queryStringMap === 'category-1,category-3'
 
-    return categoryRaw?.replace(/-/g, ' ') || null
-  }, [route])
+    const categoryPath = () => {
+      let path = ''
+
+      if (departmentRaw) {
+        path = departmentRaw.replace(/-/g, ' ')
+
+        if (categoryRaw && !isMissingCategory) {
+          path += ` > ${categoryRaw.replace(/-/g, ' ')}`
+
+          if (subcategoryRaw) {
+            path += ` > ${subcategoryRaw.replace(/-/g, ' ')}`
+          }
+        }
+
+        if (isMissingCategory && categoryRaw) {
+          path += ` > Undefined category`
+
+          if (categoryRaw) {
+            path += ` > ${categoryRaw.replace(/-/g, ' ')}`
+          }
+        }
+      }
+
+      return path
+    }
+
+    return categoryPath() || null
+  }, [route, queryStringMap])
+
+  if (debug === 'newtail') {
+    console.log(
+      '%c 🚧 🚧 🚧 🚧  NewtailMedia :: usePageContext :: Context 🚧 🚧 🚧 🚧',
+      'color:#3c3584;background:#ffb450;',
+      route?.pageContext
+    )
+
+    console.log(
+      '%c 🚧 🚧 🚧 🚧  NewtailMedia :: usePageContext :: Route 🚧 🚧 🚧 🚧',
+      'color:#3c3584;background:#ffb450;',
+      route
+    )
+
+    console.log(
+      `%c 🚧 🚧 🚧 🚀 NewtailMedia :: usePageContext :: Formatted category`,
+      'color:#3c3584;background:#ffb450;',
+      categoryName
+    )
+  }
 
   const brandName = useMemo(() => route?.params?.brand || null, [route])
 

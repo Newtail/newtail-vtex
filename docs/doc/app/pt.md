@@ -26,27 +26,30 @@ As propriedades dos blocos podem ser definidas pelo site-editor ou diretamente p
 ---
 `newtail-media-banner`
 
-Este componente renderiza banners na tela. Ele pega o contexto da página e consulta o servidor de anúncios Newtail para verificar se há banners disponíveis.
+Este componente renderiza banners na tela. Ele manipula o contexto da página e consulta o servidor de anúncios Newtail para verificar se há banners disponíveis.
 
 #### Propriedades via bloco `isLayout: true`
-Propriedades disponibilizadas apenas na definição do bloco.
+Propriedades disponibilizadas apenas na definição `json` do bloco dentro no tema.
 
-| Prop name                    | Type           | Default value          | Description      
-| ---------------------------- | -------------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------- | 
-| `quantity`                   | `number`       | `1`                    | Quantidade de anúncios solicitados.         
-| `placementName`              | `string`       | `banner`               | Nome do placement usado na consulta.         
-| `size`                       | `string`       | `desktop`              | Tamanho da imagem que deverá ser solicitado. Mesmo valor cadastrado na plataforma de retail media.
-| `categoryName`               | `string`       | `null`                 | Nome da categoria caso deseje forçar uma segmentação
+| Prop name       | Type     | Default value | Description      
+| --------------- | -------- | ------------- | ---------------------------------------------------------------------------------------------------------------- | 
+| `placementName` | `string` | `placement_banner_default`      | Nome do placement usado na consulta. Por padrão, será usado 'placement_banner_default'. Dê preferência ao nome cadastrado na plataforma de anúncios.        
+| `size`          | `string` | `banner`      | Tamanho da imagem que deverá ser solicitado. Mesmo valor cadastrado na plataforma de retail media.
+| `sizeMobile`    | `string` | `null`        | Tamanho da imagem que deverá ser solicitado quando visto em dispositivos mobile. Mesmo valor cadastrado na plataforma de retail media. Se não for informado, será usando o valor informado para 'desktop'.
+| `quantity`      | `number` | `1`           | Quantidade de anúncios solicitados.         
+| `categoryName`  | `string` | `null`        | Nome da categoria caso deseje forçar uma segmentação
 
 #### Propriedades via site editor
 Propriedades disponibilizadas no site editor.
 
-| Prop name                    | Type           | Default value          | Description      
-| ---------------------------- | -------------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------- | 
-| `quantityAdmin`              | `number`       | `null`                 | Quantidade de anúncios solicitados.         
-| `placementNameAdmin`         | `string`       | `null`                 | Nome do placement usado na consulta.         
-| `sizeAdmin`                  | `string`       | `null`                 | Tamanho da imagem que deverá ser soliticado. Mesmo valor cadastrado na plataforma de retail media.
-| `categoryNameAdmin`          | `string`       | `null`                 | Nome da categoria caso deseje forçar uma segmentação
+| Prop name            | Type      | Default value | Description      
+| -------------------- | --------- | ------------- | ---------------------------------------------------------------------------------------------------------------- | 
+| `active`             | `boolean` | `true`        | Indica se o placement está ativo.         
+| `placementNameAdmin` | `string`  | `null`        | Nome do placement usado na consulta.         
+| `sizeAdmin`          | `string`  | `null`        | Tamanho da imagem que deverá ser soliticado. Mesmo valor cadastrado na plataforma de retail media.
+| `sizeMobileAdmin`    | `string`  | `null`        | Tamanho da imagem que deverá ser solicitado quando visto em dispositivos mobile. Mesmo valor cadastrado na plataforma de retail media. Se não for informado, será usando o valor informado para 'desktop'.
+| `quantityAdmin`      | `number`  | `null`        | Quantidade de anúncios solicitados.         
+| `categoryNameAdmin`  | `string`  | `null`        | Nome da categoria caso deseje forçar uma segmentação.
 
 ## Newtail Media Search
 ---
@@ -60,7 +63,7 @@ Propriedades disponibilizadas apenas na definição do bloco.
 | Prop name                    | Type           | Default value          | Description      
 | ---------------------------- | -------------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------- | 
 | `quantity`                   | `number`       | `20`                   | Quantidade de anúncios solicitados.         
-| `placementName`              | `string`       | `search`               | Nome do placement usado na consulta.         
+| `placementName`              | `string`       | `placement_search_default`               | Nome do placement usado na consulta. Por padrão, será usado 'placement_search_default'. Dê preferência ao nome cadastrado na plataforma de anúncios.
 | `tagText`                    | `string`       | `Patrocinado`          | Texto que será usado na tag. Por padrão, será patrocinado com tradução automática.         
 | `tagClassname`               | `string`       | `newtail-sponsored-tag`| Classe que será adicionada ao elemento HTML da tag.         
 | `tagPosition`                | `[start,end]`  | `start`                | Indica se a tag estará no começo ou no final do card de produto.         
@@ -93,8 +96,7 @@ Propriedades disponibilizadas apenas na definição do bloco.
 | Prop name                    | Type           | Default value          | Description      
 | ---------------------------- | -------------- | ---------------------- | -------------------------------------------------------- | 
 | `quantity`                   | `number`       | `20`                   | Quantidade de anúncios solicitados.         
-| `placementName`              | `string`       | `products`             | Nome do placement usado na consulta.         
-| `categoryName`               | `string`       | `null`                 | Nome da categoria caso deseje forçar uma segmentação
+| `placementName`              | `string`       | `placement_product_default`             | Nome do placement usado na consulta. Por padrão, será usado 'placement_product_default'. Dê preferência ao nome cadastrado na plataforma de anúncios.| `categoryName`               | `string`       | `null`                 | Nome da categoria caso deseje forçar uma segmentação
 
 #### Propriedades via editor
 Propriedades disponibilizadas no site editor.

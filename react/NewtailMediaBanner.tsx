@@ -24,6 +24,8 @@ function NewtailMediaBanner(props: PropsWithChildren<NewtailMediaBannerProps>) {
     )
   }
 
+  if (!props?.active) return <></>
+
   return (
     <NewtailMediaProvider adType="banner" {...props}>
       <Banner />
@@ -36,8 +38,16 @@ const messages = defineMessages({
     id: 'admin/newtailpartnerbr-newtail-media.banner.title',
     defaultMessage: '',
   },
+  'common.active.title': {
+    id: 'admin/newtailpartnerbr-newtail-media.common.active.title',
+    defaultMessage: '',
+  },
   'common.placementNameAdmin.title': {
     id: 'admin/newtailpartnerbr-newtail-media.common.placementNameAdmin.title',
+    defaultMessage: '',
+  },
+  'banner.placementNameAdmin.description': {
+    id: 'admin/newtailpartnerbr-newtail-media.banner.placementNameAdmin.description',
     defaultMessage: '',
   },
   'banner.sizeAdmin.title': {
@@ -60,6 +70,10 @@ const messages = defineMessages({
     id: 'admin/newtailpartnerbr-newtail-media.common.quantityAdmin.title',
     defaultMessage: '',
   },
+  'common.quantityAdmin.banner.description': {
+    id: 'admin/newtailpartnerbr-newtail-media.common.quantityAdmin.banner.description',
+    defaultMessage: '',
+  },
   'common.categoryNameAdmin.title': {
     id: 'admin/newtailpartnerbr-newtail-media.common.categoryNameAdmin.title',
     defaultMessage: '',
@@ -80,7 +94,7 @@ NewtailMediaBanner.schema = {
       type: 'string',
     },
     size: {
-      default: 'dekstop',
+      default: 'banner',
       isLayout: true,
       type: 'string',
     },

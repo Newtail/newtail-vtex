@@ -2,6 +2,12 @@
 
 ## [Unreleased]
 
+## [2.0.17] - 2024-09-11
+- Toggle active placementt
+- More debug points
+- update doc
+- Improvement handle category name
+
 ## [2.0.16] - 2024-08-29
 - Remove all default values
 
