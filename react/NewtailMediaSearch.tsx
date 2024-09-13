@@ -25,7 +25,9 @@ function NewtailMediaSearch(props: PropsWithChildren<NewtailMediaSearchProps>) {
     )
   }
 
-  if (!props?.active) return <></>
+  const isActive = props.active ?? true
+
+  if (!isActive) return <></>
 
   return (
     <NewtailMediaSearchProvider {...props}>

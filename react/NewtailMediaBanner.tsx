@@ -24,7 +24,9 @@ function NewtailMediaBanner(props: PropsWithChildren<NewtailMediaBannerProps>) {
     )
   }
 
-  if (!props?.active) return <></>
+  const isActive = props.active ?? true
+
+  if (!isActive) return <></>
 
   return (
     <NewtailMediaProvider adType="banner" {...props}>

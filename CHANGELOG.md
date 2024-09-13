@@ -2,6 +2,9 @@
 
 ## [Unreleased]
 
+## [2.0.18] - 2024-09-13
+- Fix missing default active props
+
 ## [2.0.17] - 2024-09-11
 - Toggle active placementt
 - More debug points
