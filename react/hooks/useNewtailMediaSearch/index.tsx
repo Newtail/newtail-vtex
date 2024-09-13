@@ -103,7 +103,7 @@ const NewtailMediaSearchProvider: React.FC<NewtailMediaSearchProviderProps> = ({
    * Handle request ads
    */
 
-  const requestBody = useRequestBody({ skus, placement, quantityAds })
+  const requestBody = useRequestBody({ skus, placement, quantityAds, forceSearchContext: true, })
 
   const handleRequestAds = useCallback(async () => {
     if (!requestBody) return

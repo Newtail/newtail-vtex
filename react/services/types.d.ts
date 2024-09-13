@@ -69,6 +69,7 @@ type RequestBody =
       skus?: string[]
       session_id: string
       user_id?: string
+      term?: string
       device: 'mobile' | 'desktop'
       placements: {
         [key: string]:

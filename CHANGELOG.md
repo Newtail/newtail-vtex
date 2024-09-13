@@ -1,7 +1,7 @@
 # Changelog
 
-## [Unreleased]
-
+## [2.0.19] - 2024-09-13
+- Fix NewtailMediaSearch on category pages
 ## [2.0.18] - 2024-09-13
 - Fix missing default active props
 

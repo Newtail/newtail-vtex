@@ -12,6 +12,7 @@ type FormatRequestBodyProps = {
   categoryName?: string
   quantityAds?: number
   adType?: AdTypes
+  forceSearchContext?: boolean
 }
 
 type FormatRequestBody = (props: FormatRequestBodyProps) => null | RequestBody
@@ -36,6 +37,7 @@ export const useRequestBody: FormatRequestBody = ({
   mediaSize,
   mobileMediaSize,
   adType = 'product',
+  forceSearchContext = false,
   categoryName: categoryNameOverride,
 }) => {
   const { sessionId, userId } = useSessionData()
@@ -74,6 +76,10 @@ export const useRequestBody: FormatRequestBody = ({
   )
 
   const contextDataFinal = useMemo(() => {
+    if (forceSearchContext) {
+      return { ...contextData?.[context], skus }
+    }
+
     if (categoryNameOverride) {
       return {
         context: contextData?.[context].context,
@@ -82,7 +88,7 @@ export const useRequestBody: FormatRequestBody = ({
     }
 
     return contextData?.[context]
-  }, [categoryNameOverride, context, contextData])
+  }, [categoryNameOverride, context, contextData, forceSearchContext, skus])
 
   const placementData = useMemo(
     () => ({
@@ -124,6 +130,10 @@ export const useRequestBody: FormatRequestBody = ({
       userId,
     ]
   )
+
+  if (body?.term === null) {
+    delete body.term
+  }
 
   return body
 }
