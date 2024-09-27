@@ -19,7 +19,8 @@ export const usePageContext = () => {
 
   const type = route?.pageContext?.type as PageDataContextType
   const pageContextId = route?.pageContext?.id as string
-  const productSKU = route?.queryString?.skuId as string
+  const productSKU = (route?.queryString?.skuId ||
+    route?.pageContext?.id) as string
   const queryStringMap = route?.queryString?.map as string
 
   const context = useMemo(() => {
