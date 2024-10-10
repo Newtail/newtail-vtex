@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import { useMemo } from 'react'
 import { useRuntime } from 'vtex.render-runtime'
+import { useProduct } from 'vtex.product-context'
 
 const AdContextKeys = {
   home: 'home',
@@ -15,12 +16,35 @@ export const usePageContext = () => {
 
   const debug = useMemo(() => queryRaw?.debug ?? null, [queryRaw])
 
-  const term = useMemo(() => queryRaw?._q ?? null, [queryRaw])
-
   const type = route?.pageContext?.type as PageDataContextType
   const pageContextId = route?.pageContext?.id as string
-  const productSKU = (route?.queryString?.skuId ||
-    route?.pageContext?.id) as string
+
+  const canonicalPathNormalized = useMemo(
+    () => route?.canonicalPath?.split('/').pop()?.replace(/-|\//g, ' ') ?? null,
+    [route.canonicalPath]
+  )
+
+  const isCustomPage =
+    type === 'route' && pageContextId.includes('store.custom')
+
+  // const customPageAs = AdContextKeys.category
+  const customPageAs = AdContextKeys.search
+
+  const term = useMemo(() => {
+    if (isCustomPage && customPageAs === AdContextKeys.search) {
+      return canonicalPathNormalized
+    }
+
+    return queryRaw?._q ?? null
+  }, [isCustomPage, customPageAs, queryRaw?._q, canonicalPathNormalized])
+
+  /**
+   * GET Sku ID from product context
+   */
+  const productContext = useProduct()
+  const firstProductSKU = productContext?.product?.items?.[0]?.itemId
+  const productSKU = (route?.queryString?.skuId || firstProductSKU) as string
+
   const queryStringMap = route?.queryString?.map as string
 
   const context = useMemo(() => {
@@ -41,17 +65,26 @@ export const usePageContext = () => {
       case 'department':
         return AdContextKeys.category
 
+      // canonicalPath: "/listas/ar-e-refrigeracao"
+      // case 'route':
+      // return AdContextKeys.search
+
       default:
         if (isHome) return AdContextKeys.home
         if (isCategorySearch) return AdContextKeys.category
+        if (isCustomPage) return customPageAs
 
         return type in AdContextKeys
           ? (type as AdContext)
           : AdContextKeys.search
     }
-  }, [pageContextId, queryStringMap, term, type])
+  }, [customPageAs, isCustomPage, pageContextId, queryStringMap, term, type])
 
   const categoryName = useMemo(() => {
+    if (isCustomPage && customPageAs === AdContextKeys.category) {
+      return canonicalPathNormalized
+    }
+
     const departmentRaw = route.params?.department || route.params?.term
     const categoryRaw = route?.params?.category
     const subcategoryRaw = route?.params?.subcategory
