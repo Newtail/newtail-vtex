@@ -1,5 +1,6 @@
 {
   "name": "newtail-media",
+  "version": "2.0.22",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
@@ -41,7 +42,7 @@
     "prettier": "^2.2.0",
     "typescript": "^3.9.6"
   },
-  "version": "2.0.16",
+  
   "intl-equalizer": {
     "referenceLocale": "en",
     "localeDirectory": "messages"

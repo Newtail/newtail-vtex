@@ -2,12 +2,17 @@
 
 ## [Unreleased]
 
+## [2.0.22] - 2024-10-10
+- Add alternative SKU origin
+
+## [2.0.21] - 2024-09-27
+
 ## [2.0.20] - 2024-09-25
 - Fallback for product sku
-  
+
 ## [2.0.19] - 2024-09-13
 - Fix NewtailMediaSearch on category pages
-  
+- 
 ## [2.0.18] - 2024-09-13
 - Fix missing default active props
 
